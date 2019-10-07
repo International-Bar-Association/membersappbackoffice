@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF8CCC0-B0ED-4B23-9ED3-1416DBE44E5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBA_Common</RootNamespace>
+    <AssemblyName>IBA_Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AWS|AnyCPU'">
+    <OutputPath>bin\AWS\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IBA Staging|AnyCPU'">
+    <OutputPath>bin\IBA Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="IbaCmsDbContext.cs" />
+    <Compile Include="IbaCmsUser.cs" />
+    <Compile Include="Migrations\201608251003217_Create initial IbaCms Database.cs" />
+    <Compile Include="Migrations\201608251003217_Create initial IbaCms Database.Designer.cs">
+      <DependentUpon>201608251003217_Create initial IbaCms Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708031431371_v3 migration.cs" />
+    <Compile Include="Migrations\201708031431371_v3 migration.Designer.cs">
+      <DependentUpon>201708031431371_v3 migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708031526571_Created link table between function and room.cs" />
+    <Compile Include="Migrations\201708031526571_Created link table between function and room.Designer.cs">
+      <DependentUpon>201708031526571_Created link table between function and room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708111005229_Removes link to conf_rooms.cs" />
+    <Compile Include="Migrations\201708111005229_Removes link to conf_rooms.Designer.cs">
+      <DependentUpon>201708111005229_Removes link to conf_rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161444184_Removes the LocationLink table in favor for a LocationName prop on the %27ScheduleEventLocation%27 table..cs" />
+    <Compile Include="Migrations\201708161444184_Removes the LocationLink table in favor for a LocationName prop on the %27ScheduleEventLocation%27 table..Designer.cs">
+      <DependentUpon>201708161444184_Removes the LocationLink table in favor for a LocationName prop on the %27ScheduleEventLocation%27 table..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807031031298_Message Queue removed in place of Urban Airship integration.cs" />
+    <Compile Include="Migrations\201807031031298_Message Queue removed in place of Urban Airship integration.Designer.cs">
+      <DependentUpon>201807031031298_Message Queue removed in place of Urban Airship integration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807051624159_Offsite properties added to ScheduleEventLocation model.cs" />
+    <Compile Include="Migrations\201807051624159_Offsite properties added to ScheduleEventLocation model.Designer.cs">
+      <DependentUpon>201807051624159_Offsite properties added to ScheduleEventLocation model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807180923055_ScheduleEventBuilding table added. ScheduleEventLocation linked to building..cs" />
+    <Compile Include="Migrations\201807180923055_ScheduleEventBuilding table added. ScheduleEventLocation linked to building..Designer.cs">
+      <DependentUpon>201807180923055_ScheduleEventBuilding table added. ScheduleEventLocation linked to building..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808200811590_Adds timezone property to content and cms messages.cs" />
+    <Compile Include="Migrations\201808200811590_Adds timezone property to content and cms messages.Designer.cs">
+      <DependentUpon>201808200811590_Adds timezone property to content and cms messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809111548466_Adds ScheduleEventBuilding..cs" />
+    <Compile Include="Migrations\201809111548466_Adds ScheduleEventBuilding..Designer.cs">
+      <DependentUpon>201809111548466_Adds ScheduleEventBuilding..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908271426066_Add TranslatedTitle.cs" />
+    <Compile Include="Migrations\201908271426066_Add TranslatedTitle.Designer.cs">
+      <DependentUpon>201908271426066_Add TranslatedTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CmsMessage.cs" />
+    <Compile Include="Models\conf_conference.cs" />
+    <Compile Include="Models\ContentLibrary.cs" />
+    <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\DeviceOwner.cs" />
+    <Compile Include="Models\AppUserMessage.cs" />
+    <Compile Include="Models\P2PMessage.cs" />
+    <Compile Include="Models\PushMessageQueue.cs" />
+    <Compile Include="Models\ScheduleEventLocation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeedUsers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Migrations\1. Create initial IbaCms Database.sql" />
+    <Content Include="Migrations\10 - Added ScheduleEventLocation model.sql" />
+    <Content Include="Migrations\11 - Added floor to ScheduleEventLocation model.sql" />
+    <Content Include="Migrations\12- Event to events ScheduleEventLocation model.sql" />
+    <Content Include="Migrations\13 - Changes name of p2pmessage in pushMessageQueue.sql" />
+    <Content Include="Migrations\14 - Push message queue changes to use AppP2PMessage.sql" />
+    <Content Include="Migrations\15 - Added SendDate to message model.sql" />
+    <Content Include="Migrations\16 - ContentLibrary has AvailableDate added..sql" />
+    <Content Include="Migrations\17 - Removed references across multple databases.sql" />
+    <Content Include="Migrations\18 - Removes link to conf_rooms.sql" />
+    <Content Include="Migrations\19 - Removes the LocationLink table in favor for a LocationName prop on the %27ScheduleEventLocation%27 table..sql" />
+    <Content Include="Migrations\2.Added reference to conference table and conference function table.sql" />
+    <Content Include="Migrations\2.V3 Migration.sql" />
+    <Content Include="Migrations\20 - Message Queue removed in place of Urban Airship integration.sql" />
+    <Content Include="Migrations\21 - Offsite properties added to ScheduleEventLocation model.sql" />
+    <Content Include="Migrations\22 - ScheduleEventBuilding table added.sql" />
+    <Content Include="Migrations\23 - Adds timezone property to content and cms messages.sql" />
+    <Content Include="Migrations\24 - Adds ScheduleEventBuilding.sql" />
+    <Content Include="Migrations\25 - Add TranslatedTitle.sql" />
+    <Content Include="Migrations\3.Added user message models and user threads.sql" />
+    <Content Include="Migrations\4.Made changes to push queue to allow p2p messages.sql" />
+    <Content Include="Migrations\5 - Sender ID added to P2PMessage Model.sql" />
+    <Content Include="Migrations\6 - ReadTime added to p2p message.sql" />
+    <Content Include="Migrations\7 - Deletion date added to threads.sql" />
+    <Content Include="Migrations\8 - Add Conference rooms migration.sql" />
+    <Content Include="Migrations\9 - Updated function model to match lastest DB changes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608251003217_Create initial IbaCms Database.resx">
+      <DependentUpon>201608251003217_Create initial IbaCms Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708031431371_v3 migration.resx">
+      <DependentUpon>201708031431371_v3 migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708031526571_Created link table between function and room.resx">
+      <DependentUpon>201708031526571_Created link table between function and room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708111005229_Removes link to conf_rooms.resx">
+      <DependentUpon>201708111005229_Removes link to conf_rooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161444184_Removes the LocationLink table in favor for a LocationName prop on the %27ScheduleEventLocation%27 table..resx">
+      <DependentUpon>201708161444184_Removes the LocationLink table in favor for a LocationName prop on the %27ScheduleEventLocation%27 table..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807031031298_Message Queue removed in place of Urban Airship integration.resx">
+      <DependentUpon>201807031031298_Message Queue removed in place of Urban Airship integration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807051624159_Offsite properties added to ScheduleEventLocation model.resx">
+      <DependentUpon>201807051624159_Offsite properties added to ScheduleEventLocation model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180923055_ScheduleEventBuilding table added. ScheduleEventLocation linked to building..resx">
+      <DependentUpon>201807180923055_ScheduleEventBuilding table added. ScheduleEventLocation linked to building..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808200811590_Adds timezone property to content and cms messages.resx">
+      <DependentUpon>201808200811590_Adds timezone property to content and cms messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111548466_Adds ScheduleEventBuilding..resx">
+      <DependentUpon>201809111548466_Adds ScheduleEventBuilding..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271426066_Add TranslatedTitle.resx">
+      <DependentUpon>201908271426066_Add TranslatedTitle.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

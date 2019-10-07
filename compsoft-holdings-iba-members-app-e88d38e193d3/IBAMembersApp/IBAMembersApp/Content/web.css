@@ -1,0 +1,195 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Main Navbar */
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-inverse {
+    background-color: black;
+    border-color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #9d9d9d;
+}
+
+.navbar-inverse .navbar-nav > li.active > a {
+    color: red;
+    border-bottom: 6px solid red;
+}
+
+.navbar-inverse .navbar-nav > li.active > a:hover {
+    color: darkred;
+}
+
+/** Main content */
+.wt-content {
+    padding: 0;
+}
+
+.wt-body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Sub Navbar */
+.wt-sub-navbar {
+    background-color: #f9f9f9;
+}
+
+.wt-sub-navbar .navbar-nav > li {
+    float: left;
+}
+
+.wt-sub-navbar .navbar-nav > li > a {
+    color: black;
+}
+
+.wt-sub-navbar .navbar-nav > li > a:hover {
+    color: #9d9d9d;
+    background-color: inherit;
+}
+
+.wt-sub-navbar .navbar-nav > li.active > a {
+    color: red;
+    border-bottom: 6px solid red;
+}
+
+.wt-sub-navbar .navbar-nav > li.active > a:hover {
+    color: lightcoral;
+}
+
+/* Sub Navbar page actions */
+.wt-sub-navbar .wt-actions {
+    float: right;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.wt-sub-navbar .datatable_actions .dataTables_filter {
+    float: right;
+    padding-right: 15px;
+}
+
+.wt-sub-navbar .datatable_actions .dataTables_paginate {
+    float: right;
+}
+
+.wt-sub-navbar .datatable_actions .dataTables_paginate .pagination {
+    display: inherit;
+    margin: 0;
+}
+
+.wt-sub-navbar .datatable_actions #wt-search-label {
+    padding-top: 6px;
+    padding-right: 6px;
+}
+
+.wt-sub-navbar .datatable_actions .dataTables_info {
+    float: right;
+    padding-top: 6px;
+    padding-right: 6px;
+}
+
+/* Filter */
+.wt-filter-collapse {
+    padding: 0;
+}
+
+.wt-sub-navbar .wt-filter-toggle {
+    float: right;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 9px 10px 6px 10px;
+    margin: 0 0 15px 15px;
+}
+
+.wt-sub-navbar .wt-filter-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: gray;
+    margin-bottom: 3px;
+}
+
+.wt-filter {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.wt-filter h1 {
+    font-size: 18px;
+    padding: 0 15px;
+}
+
+.wt-filter h2 {
+    font-size: 16px;
+    background-color: gray;
+    color: white;
+    padding: 6px 15px;
+    margin-top: 0;
+}
+
+.wt-filter .row {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 6px;
+    margin-right: 0;
+}
+
+.wt-filter .row label {
+    padding-top: 6px;
+}
+
+.wt-filter .row .col-xs-1, .wt-filter .row .col-sm-1, .wt-filter .row .col-md-1, .wt-filter .row .col-lg-1,
+.wt-filter .row .col-xs-2, .wt-filter .row .col-sm-2, .wt-filter .row .col-md-2, .wt-filter .row .col-lg-2, 
+.wt-filter .row .col-xs-3, .wt-filter .row .col-sm-3, .wt-filter .row .col-md-3, .wt-filter .row .col-lg-3,
+.wt-filter .row .col-xs-4, .wt-filter .row .col-sm-4, .wt-filter .row .col-md-4, .wt-filter .row .col-lg-4,
+.wt-filter .row .col-xs-5, .wt-filter .row .col-sm-5, .wt-filter .row .col-md-5, .wt-filter .row .col-lg-5,
+.wt-filter .row .col-xs-6, .wt-filter .row .col-sm-6, .wt-filter .row .col-md-6, .wt-filter .row .col-lg-6,
+.wt-filter .row .col-xs-7, .wt-filter .row .col-sm-7, .wt-filter .row .col-md-7, .wt-filter .row .col-lg-7,
+.wt-filter .row .col-xs-8, .wt-filter .row .col-sm-8, .wt-filter .row .col-md-8, .wt-filter .row .col-lg-8,
+.wt-filter .row .col-xs-9, .wt-filter .row .col-sm-9, .wt-filter .row .col-md-9, .wt-filter .row .col-lg-9,
+.wt-filter .row .col-xs-10, .wt-filter .row .col-sm-10, .wt-filter .row .col-md-10, .wt-filter .row .col-lg-10,
+.wt-filter .row .col-xs-11, .wt-filter .row .col-sm-11, .wt-filter .row .col-md-11, .wt-filter .row .col-lg-11,
+.wt-filter .row .col-xs-12, .wt-filter .row .col-sm-12, .wt-filter .row .col-md-12, .wt-filter .row .col-lg-12 {
+    padding-right: 0;
+}
+
+@media (min-width: 992px) {
+    .wt-sub-navbar .navbar-nav > li {
+        float: inherit;
+    }
+
+    #wt-content-container {
+        height: auto;
+        display: flex;
+        flex-flow: row;
+    }
+
+    #wt-content-container .wt-content-sub-container {
+        flex: 0 1 auto;
+    }
+
+    .wt-filter {
+        min-height: calc(100vh - 114px);
+        border-right: solid 1px black;
+    }
+
+    .wt-filter .row {
+        margin-right: 15px;
+    }
+}

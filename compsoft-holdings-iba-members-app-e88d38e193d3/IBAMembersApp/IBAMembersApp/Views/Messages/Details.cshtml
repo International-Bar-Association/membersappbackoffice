@@ -1,0 +1,31 @@
+﻿@model IBAMembersApp.Models.MessageViewModel
+
+@{
+    ViewBag.Title = "Message Details";
+}
+@section navigation {
+    @Html.Partial("MessagesPartial")
+}
+@section subnav
+{
+    <h2>@ViewBag.Title</h2>
+}
+<div>
+    @Html.Partial("ReadonlyPartialView",Model)
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <dl class="dl-horizontal">
+            <dt>
+                &nbsp;
+            </dt>
+
+            <dd>
+                @Html.ActionLink("Export Message Log", "ExportToCsv", new { id = Model.Id }, new { @class = "btn btn-success", title = "Export to Csv" })
+                <br/><br/><br/>
+                @Html.ActionLink("Back to Messages", "Index")
+            </dd>
+        </dl>
+    }
+</div>

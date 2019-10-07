@@ -1,0 +1,120 @@
+﻿.glyphicon-pencil {
+    color: #1b2b78;
+}
+.glyphicon-info-sign {
+    color: #1b2b78;
+}
+.glyphicon-trash {
+    color: red;  
+}
+.glyphicon-folder-close {
+    color: red;  
+}
+.glyphicon-ban-circle {
+    color: red;  
+}
+
+.glyphicon-eye-open {
+    color: green;
+}
+.glyphicon-send {
+    color: green;
+}
+
+.textarea-in-grid {
+    resize: none;
+    overflow-y: hidden;
+    border: none;
+    background: none;
+}
+
+
+.navbar-inverse {
+    background-color: #1b2b78;
+    border-color: #1b2b78;
+}
+.navbar-inverse .navbar-nav > li.active > a {
+    background-color: inherit;
+    color: #007aff;
+    border-bottom: 6px solid #007aff;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: inherit;
+    color: lightblue;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: lightblue;
+    border-color: white;
+}
+
+
+.navbar-inverse .navbar-nav > li.active > a:hover {
+    background-color: inherit;
+    color: white;
+}
+
+.navbar-nav h2 {
+    color: navy;
+}
+#HomeLink {
+    background-color: inherit;
+    color: white;
+}
+#HomeLink:hover {
+    background-color: inherit;
+    color: lightblue;
+}
+
+#HomeLink.HomeActive {
+    background-color: inherit;
+    color: #007aff;
+    border-bottom: 6px solid #007aff;
+    padding-bottom: 35px;
+}
+#HomeLink.HomeActive:hover {
+    background-color: inherit;
+    color: white;
+    border-bottom: 6px solid lightblue;
+}
+.wt-sub-navbar {
+    padding-bottom: 5px;
+}
+
+
+/*Start of Pin Plotter*/
+.row.button-containing {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+    .row.button-containing:nth-of-type(1) {
+        background-color: #1b2b78;
+    }
+    .row.button-containing:nth-of-type(2) {
+        background-color: #5D6AB2;
+    }
+    .row.button-containing:nth-of-type(3) {
+        background-color: #9FADFF;
+    }
+
+.button-container {
+
+}
+    .button-container > .row {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+        .button-container > .row > div {
+            display: inline-block;
+            float: none;
+        }
+
+.buildingButton {
+    margin-right:10px;
+}
+/*End of Pin Plotter*/

@@ -1,0 +1,28 @@
+﻿@model IBAMembersApp.Models.ContentLibraryViewModel
+
+@{
+    ViewBag.Title = "Content Details";
+}
+@section  navigation {
+@Html.Partial("ContentPartial")
+}
+@section subnav
+{
+    <h2>@ViewBag.Title</h2>
+}
+<div>
+    @Html.Partial("ReadOnlyPartialView",Model)
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <dl class="dl-horizontal">
+            <dt>
+                &nbsp;
+            </dt>
+
+            <dd>
+                @Html.ActionLink("Back to Content Library History", "History")
+            </dd>
+        </dl>
+    }
+</div>

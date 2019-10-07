@@ -1,0 +1,151 @@
+[
+    {
+        "centreX": 1254,
+        "centreY": 838,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.1, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.1, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 1150,
+        "centreY": 849,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.2, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.2, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 1113,
+        "centreY": 852,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.3, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.3, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 981,
+        "centreY": 852,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.4, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.4, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 945,
+        "centreY": 854,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.5, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.5, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 962,
+        "centreY": 856,
+        "linkedItemId": null,
+        "linkedLocation": "Rooms E5.4+E5.5, Exhibition Centre, Level 5",
+        "sectionItemText": "Rooms E5.4+E5.5, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 847,
+        "centreY": 840,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.6, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.6, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 902,
+        "centreY": 793,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.7, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.7, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 1010,
+        "centreY": 792,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.8, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.8, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 1077,
+        "centreY": 794,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.9, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.9, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 1189,
+        "centreY": 795,
+        "linkedItemId": null,
+        "linkedLocation": "Room E5.10, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.10, Exhibition Centre, Mezzanine Level 5"
+    },
+    {
+        "centreX": 1725,
+        "centreY": 661,
+        "linkedItemId": null,
+        "linkedLocation": "Grand Ballroom B1, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballroom B1, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1797,
+        "centreY": 664,
+        "linkedItemId": null,
+        "linkedLocation": "Grand Ballroom B2, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballroom B2, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1856,
+        "centreY": 615,
+        "linkedItemId": null,
+        "linkedLocation": "Grand Ballroom B3, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballroom B3, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1815,
+        "centreY": 650,
+        "linkedItemId": null,
+        "linkedLocation": "Grand Ballrooms B2&B3, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballrooms B2&B3, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1777,
+        "centreY": 661,
+        "linkedItemId": null,
+        "linkedLocation": "Grand Ballrooms B1&B2, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballrooms B1&B2, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1788,
+        "centreY": 629,
+        "linkedItemId": null,
+        "linkedLocation": "Grand Ballroom, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballroom, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1726,
+        "centreY": 680,
+        "linkedLocation": "Grand Ballroom 1",
+        "sectionItemText": "Grand Ballroom 1"
+    },
+    {
+        "centreX": 1726,
+        "centreY": 680,
+        "linkedLocation": "Grand Ballroom 1, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballroom 1, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 1840,
+        "centreY": 634,
+        "linkedLocation": "Grand Ballroom 3",
+        "sectionItemText": "Grand Ballroom 3"
+    },
+    {
+        "centreX": 1840,
+        "centreY": 634,
+        "linkedLocation": "Grand Ballroom 3, Convention Centre, Level 5",
+        "sectionItemText": "Grand Ballroom 3, Convention Centre, Level 5"
+    },
+    {
+        "centreX": 980,
+        "centreY": 862,
+        "linkedLocation": "Room E5.4, Exhibition Centre, Level 5",
+        "sectionItemText": "Room E5.4, Exhibition Centre, Level 5"
+    }
+]

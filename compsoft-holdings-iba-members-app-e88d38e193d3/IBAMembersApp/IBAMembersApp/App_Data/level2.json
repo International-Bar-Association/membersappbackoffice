@@ -1,0 +1,97 @@
+[
+    {
+        "centreX": 1424,
+        "centreY": 489,
+        "linkedItemId": null,
+        "linkedLocation": "Room C2.1, Convention Centre, Level 2",
+        "sectionItemText": "Room C2.1, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1433,
+        "centreY": 515,
+        "linkedItemId": null,
+        "linkedLocation": "Room C2.2, Convention Centre, Level 2",
+        "sectionItemText": "Room C2.2, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1448,
+        "centreY": 558,
+        "linkedItemId": null,
+        "linkedLocation": "Room C2.3, Convention Centre, Level 2",
+        "sectionItemText": "Room C2.3, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1438,
+        "centreY": 528,
+        "linkedItemId": null,
+        "linkedLocation": "Rooms C2.2&C2.3, Convention Centre, Level 2",
+        "sectionItemText": "Rooms C2.2&C2.3, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1485,
+        "centreY": 546,
+        "linkedItemId": null,
+        "linkedLocation": "Room C2.4, Convention Centre, Level 2",
+        "sectionItemText": "Room C2.4, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1517,
+        "centreY": 535,
+        "linkedItemId": null,
+        "linkedLocation": "Room C2.5, Convention Centre, Level 2",
+        "sectionItemText": "Room C2.5, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1548,
+        "centreY": 528,
+        "linkedItemId": null,
+        "linkedLocation": "Room C2.6, Convention Centre, Level 2",
+        "sectionItemText": "Room C2.6, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1772,
+        "centreY": 603,
+        "linkedItemId": null,
+        "linkedLocation": "The Gallery, Convention Centre, Level 2",
+        "sectionItemText": "The Gallery, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1472,
+        "centreY": 685,
+        "linkedItemId": null,
+        "linkedLocation": "Parkside Ballrooms 1&2, Convention Centre, Level 2",
+        "sectionItemText": "Parkside Ballrooms 1&2, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1513,
+        "centreY": 674,
+        "linkedItemId": null,
+        "linkedLocation": "Parkside Ballroom 1, Convention Centre, Level 2",
+        "sectionItemText": "Parkside Ballroom 1, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1445,
+        "centreY": 695,
+        "linkedItemId": null,
+        "linkedLocation": "Parkside Ballroom 2, Convention Centre, Level 2",
+        "sectionItemText": "Parkside Ballroom 2, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1418,
+        "centreY": 416,
+        "linkedLocation": "Pyrmont Theatre, Convention Centre, Level 2",
+        "sectionItemText": "Pyrmont Theatre, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1530,
+        "centreY": 674,
+        "linkedLocation": "Parkside Ballroom 1, Convention Centre, Level 2",
+        "sectionItemText": "Parkside Ballroom 1, Convention Centre, Level 2"
+    },
+    {
+        "centreX": 1446,
+        "centreY": 698,
+        "linkedLocation": "Parkside Ballroom 2, Convention Centre, Level 2",
+        "sectionItemText": "Parkside Ballroom 2, Convention Centre, Level 2"
+    }
+]

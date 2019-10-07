@@ -1,0 +1,78 @@
+﻿@model IBAMembersApp.Models.ContentLibraryViewModel
+<style>
+    dt {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    dd {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+</style>
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Featured)
+    </dt>
+
+    <dd>
+        @if (Model.Featured)
+        {
+            <span class="glyphicon glyphicon-ok" style="color: grey;font-size: 25px"></span>
+        }
+        else
+        {
+            <span class="glyphicon glyphicon-remove" style="color: grey;font-size: 20px"></span>
+        }
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ContentTypeText)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ContentTypeText)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ImageUrl)
+    </dt>
+
+    <dd>
+        <img src="@Model.ImageUrl" alt="Image" style="width: 100px" />
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Title)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Title)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Precis)
+    </dt>
+
+    <dd>
+        @Html.TextAreaFor(model => model.Precis, new { htmlAttributes = new { @class = "form-control" }, rows = 10, cols = 100, disabled = true })
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Url)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Url)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Created)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Created)
+    </dd>
+
+</dl>
+

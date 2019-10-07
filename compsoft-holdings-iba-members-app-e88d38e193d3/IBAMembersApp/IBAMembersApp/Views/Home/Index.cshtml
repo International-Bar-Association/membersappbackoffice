@@ -1,0 +1,114 @@
+﻿@model IBAMembersApp.Controllers.HomeDashboardModel
+@{
+    ViewBag.Title = "Home";
+}
+@section navigation {
+    @Html.Partial("HomePartial")
+}
+@section subnav
+{
+    <h2>Dashboard</h2>
+}
+<h3>
+    <table>
+        <thead></thead>
+        <tbody>
+            <tr style="padding-bottom: 100px;"><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.DeviceOwnersMonth)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.DeviceOwnersMonth)
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.DeviceOwners)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.DeviceOwners)
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.PendingMessages)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.PendingMessages)
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.UnRead)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.UnRead)
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.PendingContent)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.PendingContent)
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.ActiveContent)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.ActiveContent)
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td class="control-label col-md-3">@Html.LabelFor(model => model.ShowConferenceDetails)</td>
+                <td class="col-md-9">
+                    @Html.DisplayFor(model => model.ShowConferenceDetails)
+                </td>
+            </tr>
+
+            @if (Model.ShouldShowConferenceDetails)
+            {
+                <tr>
+                    <td class="control-label col-md-3">@Html.LabelFor(model => model.ConferenceName)</td>
+                    <td class="col-md-9">
+                        @Html.DisplayFor(model => model.ConferenceName)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="control-label col-md-3">@Html.LabelFor(model => model.Url)</td>
+                    <td class="col-md-9">
+                        @Html.DisplayFor(model => model.Url)
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td class="control-label col-md-3">@Html.LabelFor(model => model.Start)</td>
+                    <td class="col-md-9">
+                        @Html.DisplayFor(model => model.Start)
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td class="control-label col-md-3">@Html.LabelFor(model => model.Finish)</td>
+                    <td class="col-md-9">
+                        @Html.DisplayFor(model => model.Finish)
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</h3>
+
+@section scripts
+{
+@Styles.Render("~/Content/datatables")
+@Scripts.Render("~/bundles/datatables")
+    <script type="text/javascript">
+        $("#HomeLink").addClass("HomeActive");
+        var interval=@Model.RefreshInterval;
+            $(document).ready(function () {
+                setTimeout(function () {
+                    location.reload(true);
+                }, interval);
+            });
+    </script>
+}

@@ -1,0 +1,201 @@
+﻿@model IBAMembersApp.Models.ContentLibraryEditModel
+
+@{
+    ViewBag.Title = "Edit Content";
+}
+
+@section navigation {
+    @Html.Partial("ContentPartial")
+}
+@section subnav
+{
+    <h2>@ViewBag.Title</h2>
+}
+
+<style>
+    label.uploadLabel input[type="file"] {
+        position: fixed;
+        top: -1000px;
+    }
+</style>
+<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+@using (Html.BeginForm("Edit", "ContentLibrary", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ImageUrl)
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.CanDeleteImage)
+    @Html.HiddenFor(model => model.DeleteImage)
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Featured, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10" style="padding-left: 35px">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Featured)
+                    @Html.ValidationMessageFor(model => model.Featured, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContentType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.ContentType, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ContentType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-1">
+                <img src="@Model.ImageUrl" alt="Image" style="width: 100px" />
+            </div>
+        </div>
+
+        <div class="form-group">
+                <span class="col-md-2"></span>
+            <div class="col-md-10">
+                <label class="uploadLabel btn btn-primary">
+                    <input type="file" accept=".png,.jpg" value="UploadedFile" id="UploadedFile" name="UploadedFile" enctype="multipart/form-data" />
+                    @if (Model.CanDeleteImage)
+                    {
+                        <span>Change</span>
+                    }
+                    else
+                    {
+                        <span>Upload</span>
+                    }
+                </label>
+                @if (Model.CanDeleteImage)
+                {
+                            <label id="RemoveImage" class="btn btn-danger">Remove</label>
+                }
+                <span>For best results, please upload images which are 1440 X 720 pixels at 72dpi and which are no larger than 2mb.</span>
+                @Html.ValidationMessageFor(model => model.UploadedFile, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Required" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Precis, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Precis, new { htmlAttributes = new { @class = "form-control" }, rows = 10, cols = 100 ,style="padding: 10px"})
+                @Html.ValidationMessageFor(model => model.Precis, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Url, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Required" } })
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AvailableFromDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-sm-12 col-md-10">
+                <span>If you want the content to appear straight away leave this blank.</span>
+            </div>
+            <div class='col-sm-6'>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" name="AvailableFromDate" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeZone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-sm-12 col-md-10">
+                <span>Please select the timezone you wish to use</span>
+            </div>
+            <div class='col-sm-6'>
+                <div class='input-group'>
+                    <select name="TimeZone" class="form-control">
+
+                        @{
+                            var dt = DateTime.UtcNow;
+                            foreach (var info in System.TimeZoneInfo.GetSystemTimeZones())
+                            {
+                                if (info.SupportsDaylightSavingTime)
+                                {
+
+                                    var utcOffset = new DateTimeOffset(dt, TimeSpan.Zero);
+                                    var dif = (info.GetUtcOffset(utcOffset).Hours);
+                                    if (dif > 0)
+                                    {
+                                        @:
+                                        <option value="@info.Id"> @info.DisplayName ------@info.DaylightName (+ @dif)</option>
+                                    }
+                                    else
+                                    {
+                                        @:
+                                        <option value="@info.Id"> @info.DisplayName ------DST(@info.DaylightName (@dif)</option>
+                                    }
+
+                                }
+                                else
+                                {
+                                    @:
+                                    <option value="@info.Id"> @info.DisplayName</option>
+                                }
+                            }
+
+                        }
+                    </select>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" id="savebtn" value="Save" class="btn btn-success" />
+                <br /><br /><br />
+                @Html.ActionLink("Back to Content Library", "Index")
+            </div>
+        </div>
+    </div>
+}
+@section scripts
+{
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#datetimepicker1').datetimepicker({
+                format: 'LLLL'
+            });
+
+            $('#datetimepicker1 input').val('@(((DateTime)Model.AvailableFromDate).ToString("dddd, MMMM dd, yyyy h:mm tt"))')
+            $("input:file").change(function () {
+                $('#savebtn').click();
+            });
+            $('#RemoveImage').click(function () {
+                $('#DeleteImage').val('True');
+                $('#savebtn').click();
+            });
+
+        });
+    </script>
+}

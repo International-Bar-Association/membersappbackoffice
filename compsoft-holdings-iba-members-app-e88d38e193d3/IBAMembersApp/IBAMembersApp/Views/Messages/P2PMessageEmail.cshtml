@@ -1,0 +1,183 @@
+﻿@model IBAMembersApp.Models.P2PEmailViewModel
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+<body style="background-color: white;color: white;">
+    @{
+        string logoImgUrl = @Request.Url.Scheme + "://" + @Request.Url.Authority + @Url.Content("~/Content/Images/email_banner.svg");
+        string placeholderImageUrl = @Request.Url.Scheme + "://" + @Request.Url.Authority + @Url.Content("~/Content/Images/email_profile_image_placeholder_rome.svg");
+    }
+
+    <div id="ContentContainer" style="width: 80%;display: block;margin-left: auto;margin-right: auto;margin-top: 30px;background-color: white;border-radius: 5px;border: 2px solid #F0F0F0">
+        <div class="image-icon-container" style="width: 100%;margin-left: auto;margin-right: auto;">
+            <img class="image-icon" align="left" src="@logoImgUrl" style="display: block;background-color:#7CA24A;margin-left: auto;margin-right: auto;width: 100%;  max-width:100% !important;max-height:150px !important;">
+        </div>
+        <div id="BodyImageContainer">
+            <img id="BannerImage" src="" style="width: 100%;">
+        </div>
+        <div id="PersonNameContainer" style="width: 80%;margin-top: 25px;margin-left:auto;margin-right:auto; margin-bottom: 25px;">
+            <h2 style="color: #707070;margin: 10px;font-family: 'Open Sans', sans-serif;"> You have a new message!</h2>
+        </div>
+        <div id="BodyTextContainer" style="width: 80%; height:150px; margin-bottom: 25px; margin-left:auto;margin-right:auto;">
+            <div style="height:100%;position:relative;min-height:150px;">
+                <img src="@placeholderImageUrl" style="min-height:150px !important; max-width:100px !important;max-height:200px !important;vertical-align: top;">
+                <div style="height:50%; display:inline-block;position:absolute;top:40%;bottom:50%;">
+                    <p style="font-size: 13px; font-weight:bold;  color:#131E56;margin-bottom:0px;margin-left: 10px;font-family: 'Open Sans', sans-serif; font-weight:800;">
+                        @Model.SenderName
+                    </p>
+                    <p style="font-size: 12px;color:#AAAAAA; margin-left: 10px;margin-top:0px;font-family: 'Open Sans', sans-serif;">
+                        @Model.SentDate
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="LinkContainer" style="width: 100%;margin-bottom: 25px; min-width:200px; text-align:center;">
+            <div style="color:#222222; display:inline-block; min-height:100px; width:80%; background-color:#F0F0F0; border-radius: 5px;border: 2px solid #F0F0F0; margin-bottom:20px; padding:20px">
+                <p style="font-size:17px; text-align:left;font-family: 'Open Sans', sans-serif; font-weight:800;">@Model.MessageContents</p>
+            </div>
+        </div>
+        <div style="width:80%; margin-left:auto; margin-right:auto;">
+            <a class="button" href="https://ibamembersapp.ibanet.org/Applinks/ViewMessage" style="width: 50%;min-width:200px; background-color: #7CA24A;font-weight: bold;color: white;display: inline-block;padding-top:10px !important;padding-bottom:10px !important;cursor: pointer;text-align: center;border-radius: 5px;font-family: 'Open Sans', sans-serif;border: 2px solid #7CA24A; display: inline-block; padding: 6px 12px; margin-bottom: 0;
+        font-size: 14px;font-weight: normal;line-height: 1.42857143;text-align: center;white-space: nowrap;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: none;
+        border: 1px solid transparent;border-radius: 4px;">View in app</a>
+        </div>
+        <div id="SignOffContainer" style="color: #171e24;width: 80%; margin-left:auto;margin-right:auto">
+            <p style="margin: 10px;font-size: 15px; font-weight:lighter; color:#AAAAAA;margin-top: 10px;margin-bottom: 15px;font-family: 'Open Sans', sans-serif;">
+                Thanks,
+            </p>
+            <p style="margin: 10px;font-size: 15px;font-weight:lighter; color:#AAAAAA;margin-top: 10px;margin-bottom: 50px;font-family: 'Open Sans', sans-serif;">
+                The IBA Members App Team
+            </p>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+<style>
+    @@media (max-width: 600px) {
+        #ContentContainer {
+            width: 90% !important;
+        }
+
+        h2 {
+            font-size: 22pt !important;
+        }
+    }
+
+    body {
+        background-color: #171e24;
+        color: #707070;
+    }
+
+    h2 {
+        color: #707070;
+        margin: 10px;
+    }
+
+    p {
+        font: margin: 10px;
+        font-size: 12px;
+    }
+
+    .image-icon-container {
+        width: 100%;
+    }
+
+    .button {
+        /*background-color: #7CA24A;
+        color: white;
+        display: block;
+        height: 20px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+        border: 2px solid #7CA24A;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;*/
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    #Title {
+        vertical-align: middle;
+        padding: 15px;
+    }
+
+    .image-icon {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #ContentContainer {
+        width: 60%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        background-color: #212a32;
+        padding-bottom: 15px;
+    }
+
+    #TitleContainer {
+        width: 100%;
+        height: 70px;
+        margin-top: 30px;
+        padding-top: 1px;
+    }
+
+    #BodyImageContainer {
+    }
+
+    #BannerImage {
+        width: 100%;
+    }
+
+    #PersonNameContainer {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    #BodyTextContainer {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    #LinkContainer {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    #SignOffContainer {
+        width: 100%;
+    }
+
+        #SignOffContainer p {
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+</style>

@@ -1,0 +1,93 @@
+[
+  {
+    "centreX": 1787,
+    "centreY": 570,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.1, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.1, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1841,
+    "centreY": 552,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.2, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.2, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1877,
+    "centreY": 541,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.3, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.3, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1870,
+    "centreY": 606,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.4, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.4, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1888,
+    "centreY": 656,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.5, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.5, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1827,
+    "centreY": 681,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.6, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.6, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1790,
+    "centreY": 691,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.7, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.7, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1805,
+    "centreY": 684,
+    "linkedItemId": null,
+    "linkedLocation": "Rooms C4.6&C4.7, Convention Centre, Level 4",
+    "sectionItemText": "Rooms C4.6&C4.7, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1722,
+    "centreY": 709,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.8, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.8, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1711,
+    "centreY": 667,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.9, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.9, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1700,
+    "centreY": 637,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.10, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.10, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1708,
+    "centreY": 652,
+    "linkedItemId": null,
+    "linkedLocation": "Rooms C4.9&C4.10, Convention Centre, Level 4",
+    "sectionItemText": "Rooms C4.9&C4.10, Convention Centre, Level 4"
+  },
+  {
+    "centreX": 1694,
+    "centreY": 607,
+    "linkedItemId": null,
+    "linkedLocation": "Room C4.11, Convention Centre, Level 4",
+    "sectionItemText": "Room C4.11, Convention Centre, Level 4"
+  }
+]

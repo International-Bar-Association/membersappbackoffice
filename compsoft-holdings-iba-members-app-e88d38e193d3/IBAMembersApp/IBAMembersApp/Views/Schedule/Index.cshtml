@@ -1,0 +1,226 @@
+﻿@using IBA_Common.Models
+@model IBAMembersApp.Models.ScheduleEventLocationViewModel
+
+@{
+    ViewBag.Title = "Scehdule Event Locations";
+}
+
+@section subnav
+{
+    <h2>Schedule Locations</h2>
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="alert alert-danger" style="display:none;" id="page-errors"><span id="page-errors-message"></span></div>
+        <div class="table-responsive dataTables_wrapper">
+            <table class="table table-striped table-hover table-bordered" id="locationsTable">
+                <thead>
+                    <tr>
+                        <th>
+                            Building Name
+                        </th>
+                        <th>
+                            Floor
+                        </th>
+                        <th>
+                            Floor Name
+                        </th>
+                        <th>
+                            Room Name
+                        </th>
+                        <th>
+                            Centre X / Lat
+                        </th>
+                        <th>
+                            Centre Y / Long
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Locations)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BuildingName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Floor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FloorName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RoomName)
+                            </td>
+                            <td>
+                                @{ var xValue = !item.IsOffsite ? item.CentreX : item.Lat; }
+                                @xValue
+                            </td>
+                            <td>
+                                @{ var yValue = !item.IsOffsite ? item.CentreY : item.Long; }
+                                @yValue
+                            </td>
+                            <td>
+                                @if (item.IsOffsite)
+                                {
+                                    <a data-id="@item.Id" data-name="@item.RoomName" data-lat="@item.Lat" data-long="@item.Long" class="btn glyphicon glyphicon-pencil edit-offsite"  title="Edit"> </a>
+
+                                }
+                                else
+                                {
+                                    <a data-id="@item.BuildingId" data-name="@item.BuildingName" data-floorIndex="@item.Floor" data-floorName="@item.FloorName" class="btn glyphicon glyphicon-pencil edit-normal" title="Edit"> </a>
+                                }
+                                @using (Html.BeginForm("Delete", "Schedule", FormMethod.Post))
+                                {
+                                    <input type="hidden" name="Id" value="@item.Id" />
+                                    <span class="delete-schedule-location btn glyphicon glyphicon-trash"></span>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editNormalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Location</h4>
+            </div>
+            <div class="modal-body">
+                <input id="IdEntry" class="form-control hidden" type="text" />
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1"><label>Name</label><label id="LocationNameEntry" class="form-control"/><br /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1"><label>FloorIndex</label><label id="FloorIndexlabel" class="form-control" type="text" /><br /></div>
+                    <div class="col-md-5 col-md-offset-1"><label>FloorName(as appears in app)</label><input id="FloorName" class="form-control" type="text" /><br /></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="editNormalButtonModal" class="btn btn-primary">Edit Location</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="editOffsiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Offsite Location</h4>
+            </div>
+            <div class="modal-body">
+                <input id="IdEntry" class="form-control hidden" type="text" />
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1"><label>Name</label><input id="LocationNameEntry" class="form-control" type="text" /><br /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1"><label>Lat</label><input id="LatEntry" class="form-control" type="text" /><br /></div>
+                    <div class="col-md-5 col-md-offset-1"><label>Long</label><input id="LongEntry" class="form-control" type="text" /><br /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1"><label>Translated Title</label><input id="TranslatedTitleEntry" class="form-control" type="text" /><br /></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="editOffsiteButtonModal" class="btn btn-primary">Edit Location</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+@section scripts
+{
+    @Styles.Render("~/Content/datatables")
+    @Scripts.Render("~/bundles/datatables")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var opts = { "order": [[0, "desc"]] };
+            WebTemplate.DataTables.ClientSide("locationsTable", opts);
+
+            $("#locationsTable").on("click", ".edit-offsite", function () {
+                var item = $(this)
+                $('#IdEntry').val(item.data("id"));
+                $('#LocationNameEntry').val(item.data("name"));
+                $('#LatEntry').val(item.data("lat"));
+                $('#LongEntry').val(item.data("long"));
+                $('#editOffsiteModal').modal();
+            })
+
+            $("#locationsTable").on("click",".edit-normal", function () {
+                var item = $(this)
+                $('#IdEntry').val(item.data("id"));
+                $('#LocationNameEntry').text(item.data("name"));
+                $('#FloorIndexlabel').text(item.data("floorindex"));
+                $('#FloorName').val(item.data("floorname"));
+                $('#editNormalModal').modal();
+            })
+        });
+
+        $('.delete-schedule-location').on('click', function () {
+            if (confirm('Are you sure?')) {
+                this.parentNode.submit();
+            }
+        })
+
+        $('#editOffsiteButtonModal').on("click", function () {
+            var id = $('#IdEntry').val();
+            var name = $('#LocationNameEntry').val();
+            var lat = $('#LatEntry').val();
+            var long = $('#LongEntry').val()
+            var data = {
+                id: id,
+                linkedLocation: name,
+                lat: lat,
+                lon: long
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditExternalLocation", "schedule")',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                processData: false,
+                contentType: 'application/json; charset=utf-8',
+                complete: function () {
+                    location.reload();
+                }
+            });
+        })
+
+        $('#editNormalButtonModal').on("click", function () {
+            var id = $('#IdEntry').val();
+            var name = $('#FloorName').val();
+            var index = $('#FloorIndexlabel').text();
+
+            var data = {
+                id: id,
+                floorName: name,
+                index: parseInt(index)
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("EditFloorName", "schedule")',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                processData: false,
+                contentType: 'application/json; charset=utf-8',
+                complete: function () {
+                    location.reload();
+                }
+            });
+        })
+    </script>
+}

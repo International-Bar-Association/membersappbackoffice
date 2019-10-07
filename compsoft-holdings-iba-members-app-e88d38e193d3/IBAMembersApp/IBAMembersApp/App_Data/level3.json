@@ -1,0 +1,173 @@
+[
+    {
+        "centreX": 1847,
+        "centreY": 543,
+        "linkedItemId": null,
+        "linkedLocation": "Room C3.1, Convention Centre, Level 3",
+        "sectionItemText": "Room C3.1, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1808,
+        "centreY": 686,
+        "linkedItemId": null,
+        "linkedLocation": "Room C3.2, Convention Centre, Level 3",
+        "sectionItemText": "Room C3.2, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1718,
+        "centreY": 715,
+        "linkedItemId": null,
+        "linkedLocation": "Room C3.3, Convention Centre, Level 3",
+        "sectionItemText": "Room C3.3, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1708,
+        "centreY": 678,
+        "linkedItemId": null,
+        "linkedLocation": "Room C3.4, Convention Centre, Level 3",
+        "sectionItemText": "Room C3.4, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1703,
+        "centreY": 648,
+        "linkedItemId": null,
+        "linkedLocation": "Room C3.5, Convention Centre, Level 3",
+        "sectionItemText": "Room C3.5, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1689,
+        "centreY": 611,
+        "linkedItemId": null,
+        "linkedLocation": "Room C3.6, Convention Centre, Level 3",
+        "sectionItemText": "Room C3.6, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1696,
+        "centreY": 622,
+        "linkedItemId": null,
+        "linkedLocation": "Rooms C3.5&C3.6, Convention Centre, Level 3",
+        "sectionItemText": "Rooms C3.5&C3.6, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1840,
+        "centreY": 599,
+        "linkedItemId": null,
+        "linkedLocation": "Cockle Bay Room 1, Convention Centre, Level 3",
+        "sectionItemText": "Cockle Bay Room 1, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1857,
+        "centreY": 662,
+        "linkedItemId": null,
+        "linkedLocation": "Cockle Bay Room 2, Convention Centre, Level 3",
+        "sectionItemText": "Cockle Bay Room 2, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1852,
+        "centreY": 626,
+        "linkedItemId": null,
+        "linkedLocation": "Cockel Bay Rooms 1&2, Convention Centre, Level 3",
+        "sectionItemText": "Cockel Bay Rooms 1&2, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1255,
+        "centreY": 852,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.1, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.1, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1219,
+        "centreY": 853,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.2, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.2, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1051,
+        "centreY": 853,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.3, Exhibition Centre, Level 3",
+        "sectionItemText": "RoomE3.3, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1220,
+        "centreY": 853,
+        "linkedItemId": null,
+        "linkedLocation": "Rooms E3.1&E3.2, Exhibition Centre, Level 3",
+        "sectionItemText": "Rooms E3.2&E3.3, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1016,
+        "centreY": 853,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.4, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.4, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 849,
+        "centreY": 855,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.5, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.5, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 810,
+        "centreY": 855,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.6, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.6, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 698,
+        "centreY": 785,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.7, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.7, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 880,
+        "centreY": 784,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.8, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.8, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1027,
+        "centreY": 784,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.9, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.9, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1195,
+        "centreY": 785,
+        "linkedItemId": null,
+        "linkedLocation": "Room E3.10, Exhibition Centre, Level 3",
+        "sectionItemText": "Room E3.10, Exhibition Centre, Mezzanine Level 3"
+    },
+    {
+        "centreX": 1944,
+        "centreY": 604,
+        "linkedLocation": "Cockle Bay Room 1",
+        "sectionItemText": "Cockle Bay Room 1"
+    },
+    {
+        "centreX": 1843,
+        "centreY": 606,
+        "linkedLocation": "Cockle Bay Room 1, Convention Centre, Level 3",
+        "sectionItemText": "Cockle Bay Room 1, Convention Centre, Level 3"
+    },
+    {
+        "centreX": 1842,
+        "centreY": 676,
+        "linkedLocation": "Cockle Bay Room 2",
+        "sectionItemText": "Cockle Bay Room 2"
+    },
+    {
+        "centreX": 1844,
+        "centreY": 676,
+        "linkedLocation": "Cockle Bay Room 2, Convention Centre, Level 3",
+        "sectionItemText": "Cockle Bay Room 2, Convention Centre, Level 3"
+    }
+]

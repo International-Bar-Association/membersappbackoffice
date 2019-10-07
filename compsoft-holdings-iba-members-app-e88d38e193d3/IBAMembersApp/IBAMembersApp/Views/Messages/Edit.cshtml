@@ -1,0 +1,206 @@
+﻿@using System.Web.UI.WebControls
+@model IBAMembersApp.Models.ModifyMessageModel
+
+@{
+    ViewBag.Title = "Edit Message";
+}
+
+@section navigation {
+    @Html.Partial("MessagesPartial")
+}
+@section subnav
+{
+    <h2>@ViewBag.Title</h2>
+}
+<style>
+    label.uploadLabel input[type="file"] {
+        position: fixed;
+        top: -1000px;
+    }
+</style>
+<link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+@using (Html.BeginForm("Edit", "Messages", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(m => m.UrlOnly)
+        @Html.HiddenFor(m => m.RecipientsField)
+        @Html.HiddenFor(m => m.DeleteRecipients)
+
+        @if (!Model.ToAll)
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.RecipientList, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.ListBox("dummy", Model.RecipientList, new { size = 10 })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2"></label>
+                <div class="col-md-2">
+                    <label id="RemoveList" class="btn btn-danger">Remove List</label>
+                </div>
+            </div>
+        }
+
+        <div class="form-group">
+            @if (Model.ToAll)
+            {
+                @Html.LabelFor(model => model.RecipientList, htmlAttributes: new { @class = "control-label col-md-2" })
+            }
+            else
+            {
+                <label class="control-label col-md-2">Change Recipients</label>
+
+            }
+            <div class="col-md-2">
+                <label class="uploadLabel btn btn-primary">
+                    <input type="file" accept=".txt,.csv" value="UploadedFile" id="UploadedFile" name="UploadedFile" class="btn btn-default" enctype="multipart/form-data" />
+                    <span>Import Recipients</span>
+                </label>
+                @Html.ValidationMessageFor(model => model.UploadedFile, "", new { @class = "text-danger" })
+            </div>
+            @if (Model.ToAll)
+                {
+                <label class="control-label col-md-1"> Or Everyone</label>
+                <a class="btn btn-info" href="~/Content/Samples/ibatest.csv">Download Sample Csv</a>
+            }
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MessageType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.MessageType, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MessageType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Required" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @if (Model.UrlOnly)
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Url, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Required" } })
+                    @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" }, rows = 10, cols = 100, placeholder = "Required", style = "padding: 10px" })<br />
+                    @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+        
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.SendDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-sm-12 col-md-10">
+                <span>If you wish to send the message straight away leave this next field empty.</span>
+            </div>
+            <div class='col-sm-6'>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" name="SendDateTime" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeZone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-sm-12 col-md-10">
+                <span>Please select the timezone you wish to use</span>
+                <span>Please be aware that if the timezone you select is currently operating on Daylight Savings the system does account for this.</span>
+            </div>
+            <div class='col-sm-6'>
+                <div class='input-group'>
+                    <select name="TimeZone" class="form-control">
+
+                        @{
+                            var dt = DateTime.UtcNow;
+                            foreach (var info in System.TimeZoneInfo.GetSystemTimeZones())
+                            {
+                                if (info.SupportsDaylightSavingTime)
+                                {
+
+                                    var utcOffset = new DateTimeOffset(dt, TimeSpan.Zero);
+                                    var dif = (info.GetUtcOffset(utcOffset).Hours);
+                                    if (dif > 0)
+                                    {
+                                        @:
+                                        <option value="@info.Id"> @info.DisplayName ------@info.DaylightName (+ @dif)</option>
+                                    }
+                                    else
+                                    {
+                                        @:
+                                        <option value="@info.Id"> @info.DisplayName ------DST(@info.DaylightName (@dif)</option>
+                                    }
+
+                                }
+                                else
+                                {
+                                    @:
+                                    <option value="@info.Id"> @info.DisplayName</option>
+                                }
+                            }
+
+                        }
+                    </select>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" id="savebtn" class="btn btn-success" /><br /><br /><br />
+                @Html.ActionLink("Back to Messages", "Index")
+            </div>
+        </div>
+    </div>
+}
+@section scripts
+{
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'LLLL'
+            });
+            @if(Model.SendDateTime != null)
+            {
+                @:$('#datetimepicker1 input').val('@(((DateTime)Model.SendDateTime).ToString("dddd, MMMM dd, yyyy h:mm tt"))')
+            }
+            $("input:file").change(function () {
+                $('#savebtn').click();
+});
+            $('#RemoveList').click(function () {
+                $('#DeleteRecipients').val('True');
+                $('#savebtn').click();
+            });
+        });
+    </script>
+}

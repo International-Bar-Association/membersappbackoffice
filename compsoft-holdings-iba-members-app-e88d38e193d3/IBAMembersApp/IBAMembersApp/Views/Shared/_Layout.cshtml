@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iba Members - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header col-md-4">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href='@Url.Action("Index", "Home")'>
+                <img src='@Url.Content("~/Content/Images/iba_logo.png")' style="height: 30px; margin-top: 8px; margin-bottom: 18px"/>
+            </a>
+                
+        </div>
+        <div class="navbar-collapse collapse">
+            <div>
+                <ul class="nav navbar-nav">
+                    @RenderSection("navigation", required: false)
+                </ul>
+            </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+    </div>
+</div>
+
+@if (IsSectionDefined("subnav") || IsSectionDefined("actions"))
+{
+<div class="wt-sub-navbar container-fluid" style="margin-bottom: 15px">
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="nav navbar-nav">
+                @RenderSection("subnav", required: false)
+            </ul>
+        </div>
+        <div class="col-md-6 wt-actions-container">
+            <div class="wt-actions datatable_actions">
+@if (IsSectionDefined("filter"))
+{
+                <button type="button" class="wt-filter-toggle navbar-toggle" data-toggle="collapse" data-target=".wt-filter-collapse">
+                    <span class="glyphicon glyphicon-filter"></span>
+                </button>
+}
+            </div>
+            <div class="wt-actions">
+                @RenderSection("actions", required: false)
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+<div class="container-fluid">
+    <div id="wt-content-container" class="row">
+        @{
+        var mainColWidth = "col-md-12";
+        if (IsSectionDefined("filter"))
+        {
+            mainColWidth = "col-md-9";
+        <div class="col-md-3 wt-content-sub-container wt-filter">
+            <div class="wt-filter-collapse navbar-collapse collapse">
+                <div>
+                    <img src="~/Content/images/iba_logo.png" alt="Image" style="width: 30px" />    
+                </div>
+                
+
+                <h1>@(ViewBag.FilterTitle ?? "Filter")</h1>
+                <h2>Search</h2>
+                <div class="row">
+                    <div class="col-md-3"><label id="wt-search-label" for="wt-search-control">Search</label>
+                    </div>
+                    <div class="col-md-9 wt-search"></div>
+                </div>
+                <div id="wt-filter-form">
+                    @RenderSection("filter", required: false)
+                </div>
+            </div>
+        </div>
+        }
+        }
+        <div class="@mainColWidth wt-content-sub-container wt-content">
+            <div class="wt-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+
+</body>
+</html>

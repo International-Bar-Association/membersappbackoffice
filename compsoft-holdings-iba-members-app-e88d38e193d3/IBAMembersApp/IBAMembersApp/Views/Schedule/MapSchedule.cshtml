@@ -1,0 +1,340 @@
+﻿@model IBAMembersApp.Models.MapScheduleViewModel
+@{
+    ViewBag.Title = "MapSchedule";
+}
+<div class="row button-containing">
+
+    <div class="col-xs-2 col-md-1 gutterless">
+        <button class="btn btn-default" id="initialStartButton" data-toggle="modal" data-target="#myModal">
+            Add Building
+        </button>
+    </div>
+    <div class="col-xs-8 col-md-9 gutterless">
+        <div id="BuildingContainer" class="button-container">
+            <div class="row addButtonContainer">
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2 gutterless" style="text-align:right;">
+        <button class="btn btn-success save-hotspot" onclick="SaveHotspots()">
+            Save
+        </button>
+    </div>
+    <div class="col-xs-12">
+        <span class="error-container"></span>
+    </div>
+
+</div>
+
+<div class="row button-containing">
+    <div class="col-xs-2 col-md-1 gutterless">
+        <button class="btn btn-default disabled" id="addLevelButton" data-toggle="modal" data-target="#addLevelModal">
+            Add Floor
+        </button>
+    </div>
+    <div class="col-xs-10  col-md-11 gutterless">
+        <div id="FloorContainer" class="button-container">
+            <div class="row addFloorButtonContainer">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row button-containing">
+
+    <div class="col-xs-2 col-md-1 gutterless">
+        <button class="btn btn-default disabled" id="addPinButton" data-toggle="modal" data-target="#addPinModal">
+            Add Pin
+        </button>
+    </div>
+    <div class="col-xs-8 col-md-9 gutterless">
+        <div id="PinContainer" class="button-container">
+            <div class="row addPinButtonContainer">
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2 gutterless" style="text-align:right; ">
+        <button class="btn btn-default disabled" id="addOffsitePinButton" data-toggle="modal" data-target="#addOffsiteModal">
+            Add Offsite
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div style="position: relative;">
+            <canvas id="HotspotImageCanvas" class="hidden" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+            <canvas id="HotspotCanvas" class="hidden" style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Configure Map</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1"><label>Name</label><input id="BuildingNameEntry" class="form-control" type="text" /><br /></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="addBuldingModal" class="btn btn-primary">Add Building</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="addLevelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add New Level</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-11 col-md-offset-1"><label>Image</label><input type="file" class="imageLoaderFloor form-control" name="imageLoader" data-index="0" /><br /></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="addFloorModal" class="btn btn-primary">Add Floor</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="addOffsiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Offsite Location</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1"><label>Name</label><input id="LocationNameEntry" class="form-control" type="text" /><br /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1"><label>Lat</label><input id="LatEntry" class="form-control" type="text" /><br /></div>
+                    <div class="col-md-5 col-md-offset-1"><label>Long</label><input id="LongEntry" class="form-control" type="text" /><br /></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1"><label>Translated Title</label><input id="TranslatedTitleEntry" class="form-control" type="text" /><br /></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="addOffsiteButtonModal" class="btn btn-primary">Add Pin</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="addPinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add New Pin</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="table-responsive dataTables_wrapper" style="margin:20px;">
+                        <table class="table table-striped table-hover table-bordered" id="locationsTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Room Name
+                                    </th>
+                                    <th>
+                                        Building
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Rooms)
+            {
+                                    <tr data-id="@item.RoomName" class="hotspot-item drop-item">
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RoomName)
+                                        </td>
+                                        <td>
+                                            "BUILDING"
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section scripts
+{
+    @Styles.Render("~/Content/datatables")
+    @Scripts.Render("~/bundles/datatables")
+
+    <script src="~/Scripts/Hotspot.js"></script>
+    <script src="~/Scripts/Event.js"></script>
+    <script type="text/javascript">
+
+        ///////////////////////////////////////////////////
+        /////////////////////EVENT/////////////////////////
+        ///////////////////////////////////////////////////
+        var event = new ConferenceEvent("Event Name");
+
+
+        var images = []
+
+        function handleImage(e) {
+            var reader = new FileReader();
+            reader.onload = function (readEvent) {
+
+                var canvas = document.getElementById('HotspotImageCanvas');
+                var hotspotCanvas = document.getElementById('HotspotCanvas');
+                var newFloor = event.CurrentBuilding().AddFloor(canvas, hotspotCanvas);
+                newFloor.floorImage.src = readEvent.target.result;
+                $('.addFloorButtonContainer').append("<div><button data-id='" + newFloor.id + "' class='btn btn-default active floorButton'> Level " + newFloor.number + "</button></div>");
+                $('#HotspotImageCanvas').removeClass("hidden");
+                $('#HotspotCanvas').removeClass("hidden");
+
+                event.CurrentBuilding().SwitchFloors(newFloor.id);
+                refreshPinButtons();
+                //NOTE: We want to add the floor at this point
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+
+        function SaveHotspots() {
+            alert()
+            var data = {
+                id: @ViewBag.id,
+                locations: event.GetBuldingsLocationsAndHotspots()
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SaveConferenceEvents", "schedule")',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                processData: false,
+                contentType:'application/json; charset=utf-8',
+                success: function () { }
+            });
+        }
+
+        $(document).ready(function () {
+
+            //NOTE: Start by creating the Javascript Event object that contains buildings etc
+
+            var opts = { "order": [[0, "desc"]] };
+            WebTemplate.DataTables.ClientSide("locationsTable", opts);
+
+            var imageLoaders = document.getElementsByClassName('imageLoaderFloor');
+            for (var i = 0; i < imageLoaders.length; i++) {
+                var loader = imageLoaders[i];
+                loader.addEventListener('change', handleImage, false);
+            }
+
+            var desiredWidth = $('.canvas-container').width();
+            var desiredHeight = $('.canvas-container').height();
+
+            $('#addBuldingModal').on("click", function () {
+
+
+                //NOTE: We want to add the building at this point
+                var building = event.AddBuilding($('#BuildingNameEntry').val())
+
+                //NOTE: Now add the button so we can toggle it
+                $('.active.buildingButton').removeClass("active");
+                $('.addButtonContainer').append("<div><button data-id='" + building.id + "' class='btn btn-default active buildingButton'>" + building.name + "</button></div>");
+
+                $('#myModal').modal('hide');
+                $('#addPinButton').removeClass("disabled");
+                $('#addOffsitePinButton').removeClass("disabled");
+                $('#addLevelButton').removeClass("disabled");
+
+            });
+
+            $('#addOffsiteButtonModal').on("click", function () {
+                var lat = $('#LatEntry').val()
+                var long = $('#LongEntry').val()
+                var name = $('#LocationNameEntry').val()
+
+                var hotspot = event.CurrentBuilding().CurrentFloor().hotspotManager.PlaceHotspot(name, 1, name);
+                hotspot.isOffsite = true;
+                hotspot.lat = parseFloat(lat)
+                hotspot.lon = parseFloat(long)
+
+                $('.addPinButtonContainer').append("<div><button data-id='" + name + "' class='btn btn-success active pinButton'>" + "Offsite-" + name + "</button></div>");
+            })
+
+            $("#locationsTable").on("click", ".hotspot-item.drop-item", function (item) {
+                $('#addPinModal').modal('hide');
+                console.log(item);
+                $('.pinButton').removeClass("active")
+                event.CurrentBuilding().CurrentFloor().hotspotManager.PlaceHotspot(item.currentTarget.dataset.id, 1, item.currentTarget.children[0].innerText);
+                $('.addPinButtonContainer').append("<div><button data-id='" + item.currentTarget.dataset.id + "' class='btn btn-default active pinButton'>" + item.currentTarget.children[0].innerText.substring(0, 15) + "</button></div>");
+            });
+
+            $("#BuildingContainer").on("click", ".buildingButton", function (item) {
+                var id = item.currentTarget.dataset.id;
+                $('.buildingButton').removeClass("active")
+                event.SwitchBuilding(id);
+                refreshFloorButtons();
+                refreshPinButtons();
+                $(item).addClass('active')
+            });
+
+            $("#FloorContainer").on("click", ".floorButton", function (item) {
+                var id = item.currentTarget.dataset.id;
+                $('.pinButton').removeClass("active")
+                $('.floorButton').removeClass("active")
+                event.CurrentBuilding().SwitchFloors(id);
+                refreshPinButtons();
+                $(item).addClass('active')
+            });
+
+            $("#PinContainer").on("click", ".pinButton", function (item) {
+                var id = item.currentTarget.dataset.id;
+                event.CurrentBuilding().CurrentFloor().hotspotManager.SelectHotspot(id);
+            });
+
+        })
+
+        function refreshBuildings() {
+            var buildings = event.GetBuildings();
+            for (var building in buildings) {
+                $('.addButtonContainer').append("<div><button data-id='" + building.id + "' class='btn btn-default buildingButton'>" + building.name + "</button></div>");
+            }
+        }
+
+        function refreshFloorButtons() {
+            $('.addFloorButtonContainer').empty();
+            var currentBuilding = event.CurrentBuilding();
+            for (var level in currentBuilding.GetFloors()) {
+                var lvl = currentBuilding.GetFloors()[level]
+                $('.addFloorButtonContainer').append("<div><button data-id='" + lvl.id + "' class='btn btn-default floorButton'> Level " + lvl.number + "</button></div>");
+            }
+        }
+
+        function refreshPinButtons() {
+            $('.addPinButtonContainer').empty()
+            var currentLevel = event.CurrentBuilding().CurrentFloor().hotspotManager;
+            for (var hotspot in currentLevel.GetHotspots()) {
+                var ht = currentLevel.GetHotspots()[hotspot]
+                $('.addPinButtonContainer').append("<div><button data-id='" + ht.linkedLocation + "' class='btn btn-default pinButton'>" + ht.sectionItemText.substring(0, 15) + "</button></div>");
+            }
+        }
+    </script>
+}
+

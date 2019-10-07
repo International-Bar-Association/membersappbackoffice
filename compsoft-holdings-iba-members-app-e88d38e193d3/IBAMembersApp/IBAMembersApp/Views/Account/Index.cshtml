@@ -1,0 +1,13 @@
+﻿@section navigation {
+    @Html.Partial("AccountPartial")
+}
+@section actions
+{
+}
+@using (Html.BeginForm())
+{
+    <p>
+        <a class="btn btn-default" href="@Url.Action("ChangePassword", "Account")" id="chg">Change Password</a>
+    </p>
+}
+

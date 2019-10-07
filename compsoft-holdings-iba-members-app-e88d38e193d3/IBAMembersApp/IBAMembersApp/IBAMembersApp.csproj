@@ -1,0 +1,3261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7C09F0D-FACF-4A17-B28C-CC5CE38731B8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IBAMembersApp</RootNamespace>
+    <AssemblyName>IBAMembersApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Compsoft.ApiLib, Version=1.6.0.192, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Compsoft.ApiLib.1.6.0.192\lib\net45\Compsoft.ApiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Compsoft.EmailLib, Version=6.0.4.171, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Compsoft.EmailLib.6.0.4.171\lib\net45\Compsoft.EmailLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.0.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpRaven, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpRaven.2.3.2\lib\net45\SharpRaven.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpRaven.Log4Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpRaven.Log4Net.Updated.2.3.2\lib\net40\SharpRaven.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UrbanAirSharp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\UrbanAirSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsInvoices_GetVatAnalysis_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_banks.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_currency.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_currency_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_delivery_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_invoices.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_invoices_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_invoices_items.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_invoices_items_getByInvoiceIdForCPOS_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_invoices_items_getByInvoiceId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_invoices_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_nominal_codes.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_nominal_codes_getByTransactionTypeId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_card_months.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_card_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_card_types_payment_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_card_years.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_currency_axis_logons.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_data.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_types_getForPayment_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_types_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_payment_types_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_proformas.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_proformas_items.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_proformas_source_data_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_proforma_generate_data_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_proforma_generate_fees_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_receipts.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_receipts_allocations.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_receipts_getByInvoiceId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_receipts_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_sage_export.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_transaction_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_transaction_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_vat_codes.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_vat_codes_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="accounts_wddx_receipt_data.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admin_address.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="API\Controllers\ConferenceController.cs" />
+    <Compile Include="API\Controllers\MessageController.cs" />
+    <Compile Include="API\Controllers\DeviceController.cs" />
+    <Compile Include="API\Controllers\ContentLibraryController.cs" />
+    <Compile Include="API\Controllers\P2PMessageController.cs" />
+    <Compile Include="API\Models\Request\P2PRequestModel.cs" />
+    <Compile Include="API\Models\Response\ConnectionResponseModel.cs" />
+    <Compile Include="API\Models\Response\P2PMessageResponseModels.cs" />
+    <Compile Include="app_city_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_city_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_city_listForCountry_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_city_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_country_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_country_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_country_listForGroup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_country_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listClasses_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listCurrency_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listHowFoundForRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listHowFound_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listLawyerTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listMembershipTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listNominalCodes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listOfficerUnits_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listStates_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listStatuses_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listTitlesForRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listTitles_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_defaultData_listVatCodes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getAddress_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getBadgeTitleByRecordUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getByDelegateUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getByEmail_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getByIdCPOS_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getByName_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getDelegateMeetingsForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getDelegateMeetings_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_record_getNewCommitteeEmailData_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_title_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_getByType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForPaper_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForPublicationConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForPublication_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForShopDropDowns_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForSpeaker_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listForSubscription_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listPermissionForPublicationConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listPermissionForPublication_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listPermissionForSubscription_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_listPermissions_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_unit_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app_vatCodes_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceBasketItems_AtConferenceTicketsReturned.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceIssue.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLayer\ConferenceLayer.cs" />
+    <Compile Include="BusinessLayer\Models\AppUserMessagesResponseItem.cs" />
+    <Compile Include="BusinessLayer\Models\BaseV2ResponseModel.cs" />
+    <Compile Include="BusinessLayer\Models\ConferenceModels.cs" />
+    <Compile Include="BusinessLayer\Models\ContentLibraryRequestModel.cs" />
+    <Compile Include="BusinessLayer\Models\DeviceUpdateRequestModel.cs" />
+    <Compile Include="BusinessLayer\Models\ContentLibraryResponseModel.cs" />
+    <Compile Include="API\UserRights.cs" />
+    <Compile Include="API\V2XauthHeaderCheckWebApiAttribute.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="API\BasicAuthenticationWebApi.cs" />
+    <Compile Include="API\Controllers\LoginController.cs" />
+    <Compile Include="API\Controllers\MakeProfilePublicController.cs" />
+    <Compile Include="API\Controllers\ProfileImageController.cs" />
+    <Compile Include="API\Controllers\RefreshController.cs" />
+    <Compile Include="API\DateHeaderCheckWebApiAttribute.cs" />
+    <Compile Include="API\Models\Request\ProfileSearchRequestModel.cs" />
+    <Compile Include="API\Models\Response\BaseResponseModel.cs" />
+    <Compile Include="API\Models\Response\LoginResponseModel.cs" />
+    <Compile Include="API\Models\Response\ProfileSearchResponseModel.cs" />
+    <Compile Include="API\Models\Response\RefreshDataResponseModel.cs" />
+    <Compile Include="API\Models\Response\ResponseErrorModel.cs" />
+    <Compile Include="API\Models\Response\ProfileUpdateSuccessModel.cs" />
+    <Compile Include="API\XAuthHeaderCheckWebApiAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="AtConferenceBasket.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceBasketItem.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceConfiguration.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceFee.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceMerchandise.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceTicket.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceTicketEscrow.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceTicketEscrowSoldItem.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AtConferenceTicketsReturned.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="audit_myiba_login.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessLayer\ContentLibraryLayer.cs" />
+    <Compile Include="BusinessLayer\DeviceLayer.cs" />
+    <Compile Include="BusinessLayer\MessageLayer.cs" />
+    <Compile Include="BusinessLayer\Models\DeviceUpdateResponseModel.cs" />
+    <Compile Include="BusinessLayer\Models\ExportByDateParametersModel.cs" />
+    <Compile Include="BusinessLayer\Models\MessageExportModels.cs" />
+    <Compile Include="BusinessLayer\Models\MessageModels.cs" />
+    <Compile Include="BusinessLayer\Models\UpdateMessageStatusModel.cs" />
+    <Compile Include="BusinessLayer\P2PMessagingLayer.cs" />
+    <Compile Include="BusinessLayer\Push.cs" />
+    <Compile Include="c9sp_MemberDetails_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculateGrossVatValue_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalculateUnitVatValue_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cfees_edit_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cfees_new_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_banners.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_dir_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_download_dirs.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_articles_all_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_articles_archive_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_article_specific_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_banner_specific_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_pages_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_page_contents_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_get_subpage_contents_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_header_queries_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_news.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_pages.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cms_sub_pages.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_ListLPDForMyIBA_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_ListPPIDForMyIBA_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conferences_structure_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_administrator.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_avRequirement_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_avRequirement_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_avRequirement_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_avRequirement_listForFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_avRequirement_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_av_requirement.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_getNumbersByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_hotel.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_listCurrent_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_listForShopSearch_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_listPast_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_listStatus_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_conference_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_countryGroup_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_countryGroup_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_countryGroup_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_countryGroup_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_CheckForBooking_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_daily_fee_day.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_daily_fee_day_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_function.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_getBookingConfirmationByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_getByRecordIdForTransfer_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_getByRecordIdForWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_getByRecordId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_GetFreeSocialFunctionRegisteredQuantity_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_GetSPCDelegateConfOrderItemQuantities_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_getSpeakerFunctionChairsEmailFields_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_getSpeakerFunctionEmailFields_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_guest.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_listForRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_listSPCRecords_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_listStatus_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_listTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_meeting.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_merchandise.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_merchandise_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_order_item.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_output.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_searchForLop_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_type.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_upgrade_fee.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_delegate_upgrade_fee_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_checkIfFreeOnly_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_getByDelegateUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_getDailyFeeByDays_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_getDefaultForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_getSpeakerWaivedFee_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_listBookingForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_listCodes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_listForDelegateGuest_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_listToConvertForAtConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_structure.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_structure_country_group.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_structure_country_group_gen_countries.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_structure_lawyer_type_group.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_fee_structure_lawyer_type_group_gen_lawyer_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_av_requirement.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_getdate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listCodes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listForDelegateWaitList_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listForDropDowns_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listForPaper_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listForSocial_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listForSpeaker_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listStatus_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listTitlesForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listToConvertForAtConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_listTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_meetingReport_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_report_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_schedule.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_searchForWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_sessionReport_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_ticket_allocation.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_ticket_allocation_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_ticket_allocation_listForFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_ticket_allocation_listTickListForFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_type.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_function_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_listUniqueIDForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_printBadge_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_guest_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_hotel.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_hotel_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_hotel_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_hotel_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_lawyerTypeGroup_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_lawyerTypeGroup_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_lawyerTypeGroup_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_orderItem_listByStatusId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_orderItem_listCreditForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_orderItem_listTransferForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_orderItem_listTransferHeaderForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output_listForDelegateForWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output_listForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_output_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor_listByPaper_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor_type.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_contributor_type_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_function.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_getByPublicationUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_listForConferenceAndTitle_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_searchForWebsiteResponsive_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_searchForWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_paper_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_room.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_roomsetup.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_roomsetup_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_roomsetup_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_roomsetup_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_room_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_room_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_room_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_schedule_combined_slot.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_sessiontype.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_sessiontype_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speakerFunction_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speakerFunction_listdates_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speakerFunction_listRoles_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speakerFunction_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speakerFunction_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_function.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_function_role.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_getByUidForSpeakerList_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_listForFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_speaker_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_type.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_type_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_type_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_type_listTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_wddx_data.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_wddx_data_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteConfig_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteContent_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteContent_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteContent_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteMenu_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteMenu_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_websiteMenu_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_website_config.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_website_content.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conf_website_menu.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPage.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPage_GetEmailSignature_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPage_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppLinksController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ContentLibraryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
+    <Compile Include="C_batches.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_CTS_Delegates.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_CTS_DelegateTicketPayments.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_CTS_DelegateTickets.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_emailsignatures.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_lop_chicago.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_prague_registration_form.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C_records.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="delegates_register_action_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="directory_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="directory_view_default_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_HRI_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_officers_current_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_officers_edit_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_officers_new_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_units_new_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_units_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_units_website_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_unit_details_drilldown_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_unit_details_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_view_all_unit_members_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_view_default_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="divisions_working_groups_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="division_search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtproperty.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_getpropertiesbyid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dt_getpropertiesbyid_u_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Error.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fees_conferences.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="firm_sizes_check_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getBankData_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getInvoiceTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getPaymentReasons_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getPaymentTypesByBank_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getPaymentTypesByCurrency_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getPaymentTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getStatementForCPOS_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_getStatement_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_listForConference_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_account_SageExport_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_IBA_getAddress_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_invoice_getInvoiceItems_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_invoice_getInvoice_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_mem_chooseMembershipUpgrade_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_mem_chooseMembership_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_mem_chooseProformas_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_mem_getCorporateMembership_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_mem_getGroupMembership_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_mem_getMemberOrgs_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getInvoiceAmountPayable_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getInvoiceItems_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getInvoice_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getLastReceipt_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getLogonData_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getPaymentCardTypes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getPaymentExpiryYears_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getPaymentInfo_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getPaymentMonths_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getPaymentStartYears_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getWddxOrder_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_payment_getWddxReceipt_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_printTransactions_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_record_getAddress_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_record_getBlackListed_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_record_getConfAddress_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_record_getEmail_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_record_listForBulkPrint_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_ss_chooseMembershipHRI_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_ss_chooseMembershipIBA_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_ss_chooseMembershipSTM_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_ss_chooseMembershipSTU_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_ss_chooseMembershipUpgrade_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="f_cfc_ss_chooseMembership_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_addresses.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_address_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_cities.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_committees.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_committee_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_countries.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_discounts.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_divisions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_hotels.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_lawyer_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_lawyer_types_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_membership_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_professions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_professions_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_prospect_reasons.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_regions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_sections.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gen_states.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="guests_new_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIActiveContactForm.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRICategory.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRICategoryType.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIContact.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIContactCategory.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIContactCategoryIncoming.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIContactIncoming.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIContactLanguage.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIContactLanguageIncoming.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIProject.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRIProjectIncoming.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRITravelInsuranceDetail.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRITravelInsuranceDetailsIncoming.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageFluency.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogExceptionFilterAttribute.cs" />
+    <Compile Include="LogFunctionCall.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lop_search_delegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MembersContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembersContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MembersContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MembersContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MembersContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_editpersonal_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_edit_status_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_new_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_print_welcome_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_renew_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_replace_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_results_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_search_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_one_action_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_upgrade_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_breadcrumb_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_conferences_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_default_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_membership_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_offices_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_permissions_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="membership_view_speakers_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemClass_get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_aop_committees.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_areasofpractice.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_barassociations.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_childrecordimport.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_class.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_class_lawyer_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_class_membership_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_class_membership_type_upgrades.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_class_upgrades.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_contact_reasons.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_fees_structure.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_firm_positions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_firm_sizes.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_firm_titles.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_how_found_iba.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_jurisdictions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_languages.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_areasofpractice.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_barassociations.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_committees.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_contact_reasons.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_jurisdictions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_languages.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_members_notes.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_salutations.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_suffixes.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mem_titles.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentee.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentee_GetLanguages_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentee_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentorAreasOfPractice.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringLanguageAndFluency.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringLanguageAndFluency_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringRelationship.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringRelationship_ListForAutoEmail_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringStatu.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringType.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MentoringTypes_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor_GetAOPs_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor_GetLanguages_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_ListShop_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileMessageLog.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileSignInLog.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContentLibraryViewModels.cs" />
+    <Compile Include="Models\CsvRecipientModel.cs" />
+    <Compile Include="Models\IdOnlyRequestModel.cs" />
+    <Compile Include="Models\LogFunctionCall.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="API\Models\Request\ProfileRequestModel.cs" />
+    <Compile Include="API\Models\Response\ProfileResponseModel.cs" />
+    <Compile Include="API\Controllers\ProfileController.cs" />
+    <Compile Include="API\Controllers\BaseApiController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MapScheduleViewModel.cs" />
+    <Compile Include="Models\MessageViewModels.cs" />
+    <Compile Include="Models\P2PEmailViewModel.cs" />
+    <Compile Include="Models\ProfileAddress.cs" />
+    <Compile Include="myiba_editpersonal_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_editpersonal_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_editpersonal_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_editpersonal_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_editpersonal_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_editpersonal_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_editpersonal_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_manage_address_contacts_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_manage_login_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_renew_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_one_action_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myiba_upgrade_summary_source_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AddressType_GetByRecordId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AddressType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Address_GetByInvoiceType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Address_GetByRecordIDAndAddressTypeID_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Address_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Address_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AreasOfPractice_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceBasketItems_ListForBasket_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceBasketItems_ListReturnedTicketsForBasket_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceBasket_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceBasket_ListForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceBasket_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceFees_ListCodes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketEscrow_ListSoldItemsForDelegateAndFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketEscrow_ListSoldItemsForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_GetForDelegateAndFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_GetForDelegateFunctionAndComplimentary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_ListForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_ListTicketsNotReclaimed_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_ListTicketsSold_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_ListTicketsToBeSold_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_ListTotalTicketsForDelegate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTicketsReturned_ListTotalTicketsForFunction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTickets_GetForTicketTransfer_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTickets_ListCodes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTickets_ListLiveFeed_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_AtConferenceTickets_ListTitles_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Bank_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Bank_ListLookupByCurrency_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Bank_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Bank_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_ChildRecords_GetNew_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_ChildRecords_GetParentDetails_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_ListLookupByCountryAndParentRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_ListLookupByCountryTitle_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_ListLookupByCountry_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_City_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Class_GetFirmSizes_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_CommitteeType_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_CommitteeType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_CommitteeType_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListByParent_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListForProfileSearch_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupByCommitteeTypeAndIsOfficerUnit_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupByCommitteeType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupByFunctionType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupByParentRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupBySection_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupDelegateSearchAfterLopDate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookupDelegateSearchBeforeLopDate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Committee_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_ConferenceWebsiteContent_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_ConferenceWebsiteMenu_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Conference_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Country_GetByTitle_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Country_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Country_ListLookupByParentRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Country_ListLookupDelegateSearch_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Country_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Country_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Currency_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Currency_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Currency_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Delegate_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Delegate_SearchAfterLopDate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Delegate_SearchBeforeLopDate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Delegate_SearchByCommitteeAfterLopDate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Delegate_SearchByCommitteeBeforeLopDate_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListAllGeneralInterest_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListAllGeneralMeetings_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListAllRolSymposium_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListAllShowcaseSessions_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListAllWorkshops_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListByType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListPapers_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListSpeakers_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Function_ListUnits_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_HRICategoryType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_HRICategory_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_HRICategory_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_HRICategory_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_HRIContact_GetIBAMember_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_HRIContact_ValidateIBAMember_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_InvoiceType_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_InvoiceType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_InvoiceType_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_JohnsView_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Jurisdiction_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Jurisdiction_ListForProfile_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Jurisdiction_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Jurisdiction_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Language_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Language_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Language_ListForProfile_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Language_ListLookupByIsAdditional_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Language_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Language_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmPosition_ListLookupByIsAdditional_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmPosition_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmSize_ListByRange_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmTitle_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmTitle_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmTitle_ListForRecordId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmTitle_ListLookupByIsAdditional_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmTitle_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawFirmTitle_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawyerType_listForGroup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_LawyerType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberHowFoundIBA_ListLookupByRecordId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSalutation_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSuffix_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSuffix_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSuffix_ListLookupByIsAdditional_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSuffix_ListLookupByRecordId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSuffix_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberSuffix_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_ListLookupByIsAdditional_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_ListLookupByRecordId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_ListLookupForms_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_MemberTitle_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Nominal_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Nominal_ListLookupByFlag_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Nominal_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Nominal_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_NoteType_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_NoteType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_NoteType_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OfficerPosition_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OfficerPosition_ListExcludedLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OfficerPosition_ListLookupBySeqence_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OfficerPosition_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OfficerPosition_List_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OfficerPosition_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Officer_ListForUnit_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_OnlinePaymentType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Paper_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_PasswordResetRequest_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_PaymentType_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_PaymentType_ListLookupByFlag_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_PaymentType_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_PaymentType_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSDelegate_GetFee_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSDelegate_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSDelegate_ListOfficerPositions_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSDelegate_PrintBadge_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSDelegate_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSOrderItem_GetByStatusIDAndProduct_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSOrderItem_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSOrderItem_ListByStatusIDs_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_POSOrderItem_ListByStatusID_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Prospect_GetNew_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Prospect_ListByDataOrigin_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Prospect_ValidateCountry_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Prospect_ValidateEmail_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Prospect_ValidateTitle_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ExportBasicSelectedChildRecords_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ExportFullSelectedChildRecords_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ExportImportSelectedChildRecords_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_FilterChildRecords_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_GetByDelegateEmail_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_GetForPersonalDetails_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_GetOfficer_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_GetProfileWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_GetProfile_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListByFullName_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListLawFirmByClass_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListParentsByClass_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListProfileCommitteesWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListProfileOfficersWebsite_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListProfileRecommendJurisdiction_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ListSelectedChildRecords_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ValidateCookieSignIn_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Record_ValidateMobileSignIn_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Region_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Region_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Region_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Section_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_SpeakerFunctionRole_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_SpeakerFunctionRole_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_SpeakerFunctionRole_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_SpeakerFunction_ListBySpeaker_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_State_GetByTitle_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_State_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_State_ListLookupByCountryTitle_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_State_ListLookupByCountry_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_State_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_State_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Status_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_TimeZoneInfo_ListTitles_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Vat_Get_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Vat_ListLookup_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="New_Vat_Search_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoteType.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="officers_mem.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="offices_mem.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnlinePaymentType.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordResetInvalidRequest.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordResetRequest.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordResetRequestArchive.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prague_member_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prague_stage_a_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prague_stage_b_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="prospects_new_address_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Publication_ListForMyIBA_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_abbreviation.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_abbreviation_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_category.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_category_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_category_listByType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_category_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_committees.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor_listByPublicationAndType_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor_type.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_contributor_type_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_fee_getByMerchandiseUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_fee_getByPublicationUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_fee_getBySubscriptionUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_fee_structure.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_format_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_language.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_language_listLanguageByPublication_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_listPromotions_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_merchandise.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_merchandise_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_merchandise_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_merchandise_getForBasketByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_merchandise_getForWebsiteByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_getBillingAddress_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_getDeliveryAddress_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_getDetailsForBasket_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_getInvoiceForOrder_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_items.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_items_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_items_listByOrderId_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_listByRecord_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_memberSearchToAssignBasket_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_status_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_order_wddx_data.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_postage.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_postage_getByMerchandiseUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_postage_getByPublicationUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_postage_getBySubscriptionUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_postage_getForProductAndCountry_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_promotion.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_promotion_getByMerchandiseUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_promotion_getByPublicationUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_promotion_getBySubscriptionUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_promotion_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publications.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_getForBasketByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_getForWebsiteByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_language.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_listForPaper_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_permission.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_conference_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_format.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_format_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_getForBasketByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_getForWebsiteByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_ListForCurrentMonth_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_listRequiredToPublish_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_permission.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_size.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_size_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_publication_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_sections.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_status.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_status_listForColumn_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_status_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_stock.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_stock_getByMerchandiseUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_stock_getByPublicationUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_stock_getBySubscriptionUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_format.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_format_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_getById_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_getForBasketByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_getForWebsiteByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_listByYear_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_listRequiredToPublish_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_permission.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_purchased.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_purchased_export_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_purchased_getIssuesBySubscription_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_size.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_size_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_subscription_unit.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_types.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_websiteContent_getByUid_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_websiteContent_list_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pub_website_content.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="records_addresses_edit_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="records_addresses_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="record_sessions.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_index_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_preview_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_five_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_four_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_one_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_six_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_six_student_group_member_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_three_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_stage_two_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_new_summary_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_view_conferences_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_view_default_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_view_membership_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_view_offices_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="registration_view_speakers_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeZoneInfo.cs">
+      <DependentUpon>MembersContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ProcessRecipientsCsvUpload.cs" />
+    <Compile Include="Utilities\ProcessImageUpload.cs" />
+    <Compile Include="Utilities\MemoryCache.cs" />
+    <Compile Include="Utilities\MemoryCacher.cs" />
+    <Compile Include="Utilities\RecordSessionUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Buttons-1.2.1\css\buttons.bootstrap.css" />
+    <Content Include="Content\Buttons-1.2.1\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.bootstrap.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.bootstrap.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.colVis.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.colVis.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.flash.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.flash.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.foundation.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.foundation.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.html5.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.html5.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.jqueryui.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.jqueryui.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.print.js" />
+    <Content Include="Content\Buttons-1.2.1\js\buttons.print.min.js" />
+    <Content Include="Content\Buttons-1.2.1\js\dataTables.buttons.js" />
+    <Content Include="Content\Buttons-1.2.1\js\dataTables.buttons.min.js" />
+    <Content Include="Content\Buttons-1.2.1\swf\flashExport.swf" />
+    <Content Include="Content\DataTables-1.10.12\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.12\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.12\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.12\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.12\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.12\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.12\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.12\js\dataTables.bootstrap.js" />
+    <Content Include="Content\DataTables-1.10.12\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\DataTables-1.10.12\js\jquery.dataTables.js" />
+    <Content Include="Content\DataTables-1.10.12\js\jquery.dataTables.min.js" />
+    <Content Include="Content\DataTables.js" />
+    <Content Include="Content\images\email_banner.svg" />
+    <Content Include="Content\images\email_profile_image_placeholder_rome.svg" />
+    <Content Include="Content\images\grid_no_image_placeholder.png" />
+    <Content Include="Content\images\iba_logo.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\no_image_placeholder.png" />
+    <Content Include="Content\Responsive-2.1.0\css\responsive.bootstrap.css" />
+    <Content Include="Content\Responsive-2.1.0\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\Responsive-2.1.0\js\dataTables.responsive.js" />
+    <Content Include="Content\Responsive-2.1.0\js\dataTables.responsive.min.js" />
+    <Content Include="Content\Responsive-2.1.0\js\responsive.bootstrap.js" />
+    <Content Include="Content\Responsive-2.1.0\js\responsive.bootstrap.min.js" />
+    <Content Include="Content\Select-1.2.0\css\select.bootstrap.css" />
+    <Content Include="Content\Select-1.2.0\css\select.bootstrap.min.css" />
+    <Content Include="Content\Select-1.2.0\js\dataTables.select.js" />
+    <Content Include="Content\Select-1.2.0\js\dataTables.select.min.js" />
+    <Content Include="Content\web.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Icon.png" />
+    <Content Include="Images\5.png" />
+    <Content Include="Images\a545416f-3317-4cc6-a63a-d33834dd886d.png" />
+    <Content Include="Images\contentlibrary\keep.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_map_pin_next.png" />
+    <Content Include="Images\icon_map_pin_now.png" />
+    <Content Include="Images\image.jpg" />
+    <Content Include="Images\image.png" />
+    <EntityDeploy Include="MembersContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MembersContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MembersContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MembersContext.edmx</DependentUpon>
+      <LastGenOutput>MembersContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MembersContext.edmx.diagram">
+      <DependentUpon>MembersContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="MembersContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MembersContext.edmx</DependentUpon>
+      <LastGenOutput>MembersContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="App_Data\level2.json" />
+    <Content Include="App_Data\level3.json" />
+    <Content Include="App_Data\level4.json" />
+    <Content Include="App_Data\level5.json" />
+    <None Include="Properties\PublishProfiles\AWS.pubxml" />
+    <None Include="Properties\PublishProfiles\Dev.pubxml" />
+    <None Include="Properties\PublishProfiles\IBA Production.pubxml" />
+    <None Include="Properties\PublishProfiles\IBA Staging Package Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\IBA Staging.pubxml" />
+    <Content Include="Content\Samples\ibatest.csv" />
+    <None Include="Properties\PublishProfiles\Zip.pubxml" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Event.js" />
+    <Content Include="Scripts\Hotspot.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\AccountPartial.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\NavigationPartial.cshtml" />
+    <Content Include="Views\Home\HomePartial.cshtml" />
+    <Content Include="Views\Messages\MessagesPartial.cshtml" />
+    <Content Include="Views\ContentLibrary\ContentPartial.cshtml" />
+    <Content Include="Views\ContentLibrary\Index.cshtml" />
+    <Content Include="Views\ContentLibrary\Create.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\NewWindowUrl.cshtml" />
+    <Content Include="Views\ContentLibrary\Edit.cshtml" />
+    <Content Include="Views\ContentLibrary\Delete.cshtml" />
+    <Content Include="Views\ContentLibrary\Deactivate.cshtml" />
+    <Content Include="Views\ContentLibrary\Details.cshtml" />
+    <Content Include="Views\ContentLibrary\Activate.cshtml" />
+    <Content Include="Views\ContentLibrary\History.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Send.cshtml" />
+    <Content Include="Views\Messages\Archive.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Messages\ReadonlyPartialView.cshtml" />
+    <Content Include="Views\ContentLibrary\ReadOnlyPartialView.cshtml" />
+    <Content Include="Views\Messages\ExportLog.cshtml" />
+    <Content Include="Views\Schedule\MapSchedule.cshtml" />
+    <Content Include="Views\Schedule\Index.cshtml" />
+    <Content Include="Views\Messages\P2PMessageEmail.cshtml" />
+    <None Include="Web.AWS.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.IBA Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.IBA.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\compsoft-web-template\compsoft-web-template.csproj">
+      <Project>{ee662b48-0465-4995-8e37-a8e2e9517b8a}</Project>
+      <Name>compsoft-web-template</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBA_Common\IBA_Common.csproj">
+      <Project>{edf8ccc0-b0ed-4b23-9ed3-1416dbe44e5f}</Project>
+      <Name>IBA_Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IBA|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AWS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'IBA Staging|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58565</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/IBAMembersApp</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:58565/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

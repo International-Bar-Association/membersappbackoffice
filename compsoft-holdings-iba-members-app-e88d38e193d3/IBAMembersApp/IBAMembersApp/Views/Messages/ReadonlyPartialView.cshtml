@@ -1,0 +1,88 @@
+﻿@model IBAMembersApp.Models.MessageViewModel
+<style>
+    dt {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    dd {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+</style>
+
+<dl class="dl-horizontal">
+    <dt style="font-size:30px">
+            @Html.DisplayNameFor(model => model.Title)
+    </dt>
+
+    <dd style="font-size:30px">
+        @Html.DisplayFor(model => model.Title)
+    </dd>
+
+    <dt>
+        @Html.LabelFor(model => model.RecipientList)
+    </dt>
+
+    <dd>
+        @if (Model.RecipientList != null)
+            {
+            @Html.ListBox("dummy", Model.RecipientList, new { size = 10 })
+        }
+        else
+        {
+            <label>Everyone</label>
+
+        }
+    </dd>
+
+    @if (Model.UrlOnly)
+    {
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Url)
+            </dd>
+
+    }
+    else
+    {
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+            <dd>
+                @Html.TextAreaFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" }, rows = 10, cols = 100, disabled = true })
+            </dd>
+
+    }
+
+    <dt>
+        @Html.DisplayNameFor(model => model.StatusText)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.StatusText)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.MessageTypeText)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.MessageTypeText)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Created)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Created)
+    </dd>
+
+
+</dl>
+
+

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 96">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-email_profile_image_placeholder_rome);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #7ba344;
+        opacity: 0.1;
+      }
+
+      .cls-5 {
+        fill: #d8e6c6;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_311" data-name="Rectangle 311" class="cls-1" width="64" height="96" rx="8" transform="translate(10 174.5)"/>
+    </clipPath>
+    <clipPath id="clip-email_profile_image_placeholder_rome">
+      <rect width="64" height="96"/>
+    </clipPath>
+  </defs>
+  <g id="email_profile_image_placeholder_rome" class="cls-2">
+    <g id="Mask_Group_2" data-name="Mask Group 2" class="cls-3" transform="translate(-10 -174.5)">
+      <g id="Group_495" data-name="Group 495" transform="translate(-14 86.5)">
+        <rect id="Rectangle_310" data-name="Rectangle 310" class="cls-4" width="64" height="96" transform="translate(24 88)"/>
+        <path id="Path_915" data-name="Path 915" class="cls-5" d="M57.118,50.133A57.6,57.6,0,0,1,42.247,43.2c5.409-4.086,9.022-11.475,9.022-19.912C51.269,10.427,42.873,0,32.516,0S13.763,10.427,13.763,23.289c0,8.56,3.721,16.036,9.261,20.083l-.315.006c-1.884,1.493-10.1,5.249-15.484,7.111S0,54.044,0,54.044V80H64V54.044S62.441,51.564,57.118,50.133Z" transform="translate(24 104)"/>
+      </g>
+    </g>
+  </g>
+</svg>

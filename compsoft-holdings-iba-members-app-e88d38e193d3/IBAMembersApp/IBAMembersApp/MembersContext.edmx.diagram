@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24015ca1cbb04996b024a43a80553539" Name="Diagram1">
+        <EntityTypeShape EntityType="IBAModel.C_batches" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.C_CTS_Delegates" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IBAModel.C_CTS_DelegateTicketPayments" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IBAModel.C_CTS_DelegateTickets" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.C_emailsignatures" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.C_lop_chicago" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IBAModel.C_prague_registration_form" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.C_records" Width="1.5" PointX="12" PointY="8.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_banks" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_currency" Width="1.5" PointX="7.75" PointY="14.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_invoices" Width="1.5" PointX="16.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_invoices_items" Width="1.5" PointX="25.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_invoices_types" Width="1.5" PointX="20.75" PointY="23.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_nominal_codes" Width="1.5" PointX="25.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_card_months" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_card_types" Width="1.5" PointX="25.75" PointY="13.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_card_types_payment_types" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_card_years" Width="1.5" PointX="16.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_currency_axis_logons" Width="1.5" PointX="7.75" PointY="25.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_data" Width="1.5" PointX="25.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_payment_types" Width="1.5" PointX="26.75" PointY="22.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_proformas" Width="1.5" PointX="27.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_proformas_items" Width="1.5" PointX="27.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_receipts" Width="1.5" PointX="23.75" PointY="27.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_receipts_allocations" Width="1.5" PointX="25.75" PointY="27.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_sage_export" Width="1.5" PointX="27.75" PointY="16.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_transaction_status" Width="1.5" PointX="27.75" PointY="27.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_transaction_types" Width="1.5" PointX="8.75" PointY="19.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_vat_codes" Width="1.5" PointX="28.75" PointY="20.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_wddx_receipt_data" Width="1.5" PointX="29.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.admin_address" Width="1.5" PointX="29.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceBasket" Width="1.5" PointX="29.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceBasketItem" Width="1.5" PointX="29.75" PointY="24.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceBasketItems_AtConferenceTicketsReturned" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceConfiguration" Width="1.5" PointX="29.75" PointY="30.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceFee" Width="1.5" PointX="30.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceIssue" Width="1.5" PointX="31.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceMerchandise" Width="1.5" PointX="31.75" PointY="5.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceTicketEscrow" Width="1.5" PointX="31.75" PointY="24.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceTicketEscrowSoldItem" Width="1.5" PointX="31.75" PointY="12.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceTicket" Width="1.5" PointX="31.75" PointY="30.75" />
+        <EntityTypeShape EntityType="IBAModel.AtConferenceTicketsReturned" Width="1.5" PointX="32.75" PointY="16.75" />
+        <EntityTypeShape EntityType="IBAModel.cms_banners" Width="1.5" PointX="33.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.cms_download_dirs" Width="1.5" PointX="2.75" PointY="18.75" />
+        <EntityTypeShape EntityType="IBAModel.cms_news" Width="1.5" PointX="33.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IBAModel.cms_pages" Width="1.5" PointX="18.75" PointY="32.75" />
+        <EntityTypeShape EntityType="IBAModel.cms_sub_pages" Width="1.5" PointX="33.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_av_requirement" Width="1.5" PointX="14.25" PointY="44.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_conference" Width="1.5" PointX="3" PointY="27.25" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate" Width="1.5" PointX="11.25" PointY="29.375" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_daily_fee_day" Width="1.5" PointX="33.75" PointY="23.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_function" Width="1.5" PointX="10.5" PointY="25.625" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_guest" Width="1.5" PointX="16.5" PointY="30.5" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_meeting" Width="1.5" PointX="10.5" PointY="43" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_merchandise" Width="1.5" PointX="20.75" PointY="32.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_order_item" Width="1.5" PointX="33.75" PointY="27.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_output" Width="1.5" PointX="13.5" PointY="47.875" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_status" Width="1.5" PointX="34.75" PointY="14.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_type" Width="1.5" PointX="9" PointY="22.625" />
+        <EntityTypeShape EntityType="IBAModel.conf_delegate_upgrade_fee" Width="1.5" PointX="34.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_fee_structure" Width="1.5" PointX="14.25" PointY="30.375" />
+        <EntityTypeShape EntityType="IBAModel.conf_fee_structure_country_group" Width="1.5" PointX="12" PointY="63.125" />
+        <EntityTypeShape EntityType="IBAModel.conf_fee_structure_lawyer_type_group" Width="1.5" PointX="12" PointY="51.5" />
+        <EntityTypeShape EntityType="IBAModel.conf_function" Width="1.5" PointX="8.25" PointY="31" />
+        <EntityTypeShape EntityType="IBAModel.conf_function_av_requirement" Width="1.5" PointX="16.5" PointY="38.375" />
+        <EntityTypeShape EntityType="IBAModel.conf_function_schedule" Width="1.5" PointX="35.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_function_status" Width="1.5" PointX="6" PointY="28.875" />
+        <EntityTypeShape EntityType="IBAModel.conf_function_ticket_allocation" Width="1.5" PointX="35.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_function_type" Width="1.5" PointX="6" PointY="20.25" />
+        <EntityTypeShape EntityType="IBAModel.conf_guest" Width="1.5" PointX="14.25" PointY="14.5" />
+        <EntityTypeShape EntityType="IBAModel.conf_hotel" Width="1.5" PointX="3" PointY="21.5" />
+        <EntityTypeShape EntityType="IBAModel.conf_hotel_status" Width="1.5" PointX="25.75" PointY="34.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_output" Width="1.5" PointX="5.25" PointY="64" />
+        <EntityTypeShape EntityType="IBAModel.conf_paper" Width="1.5" PointX="35.75" PointY="22.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_paper_contributor" Width="1.5" PointX="35.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_paper_contributor_type" Width="1.5" PointX="35.75" PointY="10.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_room" Width="1.5" PointX="35.75" PointY="33.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_roomsetup" Width="1.5" PointX="6" PointY="31.625" />
+        <EntityTypeShape EntityType="IBAModel.conf_schedule_combined_slot" Width="1.5" PointX="36.75" PointY="14.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_sessiontype" Width="1.5" PointX="36.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_speaker_function_role" Width="1.5" PointX="14.25" PointY="25.875" />
+        <EntityTypeShape EntityType="IBAModel.conf_status" Width="1.5" PointX="0.75" PointY="34.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_type" Width="1.5" PointX="0.75" PointY="31.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_wddx_data" Width="1.5" PointX="37.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_website_config" Width="1.5" PointX="5.25" PointY="43.25" />
+        <EntityTypeShape EntityType="IBAModel.conf_website_content" Width="1.5" PointX="5.25" PointY="23.875" />
+        <EntityTypeShape EntityType="IBAModel.conf_website_menu" Width="1.5" PointX="5.25" PointY="38.25" />
+        <EntityTypeShape EntityType="IBAModel.ContentPage" Width="1.5" PointX="37.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IBAModel.dtproperty" Width="1.5" PointX="37.75" PointY="10.75" />
+        <EntityTypeShape EntityType="IBAModel.Error" Width="1.5" PointX="37.75" PointY="20.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_address_types" Width="1.5" PointX="37.75" PointY="25.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_addresses" Width="1.5" PointX="37.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_cities" Width="1.5" PointX="37.75" PointY="35.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_committee_types" Width="1.5" PointX="38.75" PointY="14.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_committees" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="IBAModel.gen_countries" Width="1.5" PointX="28.75" PointY="38.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_discounts" Width="1.5" PointX="30.75" PointY="38.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_divisions" Width="1.5" PointX="0.75" PointY="2.25" />
+        <EntityTypeShape EntityType="IBAModel.gen_hotels" Width="1.5" PointX="32.75" PointY="38.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_lawyer_types" Width="1.5" PointX="34.75" PointY="38.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_membership_types" Width="1.5" PointX="39.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_professions" Width="1.5" PointX="38.75" PointY="17.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_prospect_reasons" Width="1.5" PointX="39.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_regions" Width="1.5" PointX="39.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IBAModel.gen_sections" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="IBAModel.gen_states" Width="1.5" PointX="39.75" PointY="10.75" />
+        <EntityTypeShape EntityType="IBAModel.HRIActiveContactForm" Width="1.5" PointX="21" PointY="28.25" />
+        <EntityTypeShape EntityType="IBAModel.HRICategory" Width="1.5" PointX="21.75" PointY="2.125" />
+        <EntityTypeShape EntityType="IBAModel.HRICategoryType" Width="1.5" PointX="39.75" PointY="20.75" />
+        <EntityTypeShape EntityType="IBAModel.HRIContact" Width="1.5" PointX="18.75" PointY="20.625" />
+        <EntityTypeShape EntityType="IBAModel.HRIContactCategory" Width="1.5" PointX="24" PointY="23.125" />
+        <EntityTypeShape EntityType="IBAModel.HRIContactCategoryIncoming" Width="1.5" PointX="26.25" PointY="38" />
+        <EntityTypeShape EntityType="IBAModel.HRIContactIncoming" Width="1.5" PointX="21" PointY="35.5" />
+        <EntityTypeShape EntityType="IBAModel.HRIContactLanguage" Width="1.5" PointX="21" PointY="14.875" />
+        <EntityTypeShape EntityType="IBAModel.HRIContactLanguageIncoming" Width="1.5" PointX="23.25" PointY="48.5" />
+        <EntityTypeShape EntityType="IBAModel.HRIProject" Width="1.5" PointX="21" PointY="19" />
+        <EntityTypeShape EntityType="IBAModel.HRIProjectIncoming" Width="1.5" PointX="23.25" PointY="44" />
+        <EntityTypeShape EntityType="IBAModel.HRITravelInsuranceDetail" Width="1.5" PointX="21" PointY="7.625" />
+        <EntityTypeShape EntityType="IBAModel.HRITravelInsuranceDetailsIncoming" Width="1.5" PointX="23.25" PointY="37" />
+        <EntityTypeShape EntityType="IBAModel.LanguageFluency" Width="1.5" PointX="39.75" PointY="24.75" />
+        <EntityTypeShape EntityType="IBAModel.LogFunctionCall" Width="1.5" PointX="39.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_aop_committees" Width="1.5" PointX="39.75" PointY="31.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_areasofpractice" Width="1.5" PointX="39.75" PointY="34.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_childrecordimport" Width="1.5" PointX="36.75" PointY="39.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_class" Width="1.5" PointX="12" PointY="55" />
+        <EntityTypeShape EntityType="IBAModel.mem_class_lawyer_types" Width="1.5" PointX="39.75" PointY="37.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_class_membership_type_upgrades" Width="1.5" PointX="40.75" PointY="13.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_class_membership_types" Width="1.5" PointX="38.75" PointY="40.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_class_upgrades" Width="1.5" PointX="40.75" PointY="40.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_contact_reasons" Width="1.5" PointX="41.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_fees_structure" Width="1.5" PointX="41.75" PointY="3.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_firm_positions" Width="1.5" PointX="7.75" PointY="41.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_firm_sizes" Width="1.5" PointX="41.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_firm_titles" Width="1.5" PointX="16.75" PointY="41.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_how_found_iba" Width="1.5" PointX="41.75" PointY="19.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_jurisdictions" Width="1.5" PointX="41.75" PointY="22.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_languages" Width="1.5" PointX="41.75" PointY="25.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_areasofpractice" Width="1.5" PointX="41.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_committees" Width="1.5" PointX="41.75" PointY="31.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_contact_reasons" Width="1.5" PointX="41.75" PointY="35.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_jurisdictions" Width="1.5" PointX="42.75" PointY="13.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_languages" Width="1.5" PointX="42.75" PointY="16.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_notes" Width="1.5" PointX="25.75" PointY="42.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_salutations" Width="1.5" PointX="42.75" PointY="38.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_status" Width="1.5" PointX="42.75" PointY="41.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_suffixes" Width="1.5" PointX="43.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_titles" Width="1.5" PointX="43.75" PointY="3.75" />
+        <EntityTypeShape EntityType="IBAModel.Mentee" Width="1.5" PointX="43.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IBAModel.Mentor" Width="1.5" PointX="43.75" PointY="19.75" />
+        <EntityTypeShape EntityType="IBAModel.MentorAreasOfPractice" Width="1.5" PointX="43.75" PointY="25.75" />
+        <EntityTypeShape EntityType="IBAModel.MentoringLanguageAndFluency" Width="1.5" PointX="43.75" PointY="28.75" />
+        <EntityTypeShape EntityType="IBAModel.MentoringRelationship" Width="1.5" PointX="30.75" PointY="43.75" />
+        <EntityTypeShape EntityType="IBAModel.MentoringStatu" Width="1.5" PointX="32.75" PointY="43.75" />
+        <EntityTypeShape EntityType="IBAModel.MentoringType" Width="1.5" PointX="43.75" PointY="33.75" />
+        <EntityTypeShape EntityType="IBAModel.MobileMessageLog" Width="1.5" PointX="34.75" PointY="43.75" />
+        <EntityTypeShape EntityType="IBAModel.MobileSignInLog" Width="1.5" PointX="36.75" PointY="43.75" />
+        <EntityTypeShape EntityType="IBAModel.NoteType" Width="1.5" PointX="7.75" PointY="44.75" />
+        <EntityTypeShape EntityType="IBAModel.officers_mem" Width="1.5" PointX="44.75" PointY="13.75" />
+        <EntityTypeShape EntityType="IBAModel.offices_mem" Width="1.5" PointX="16.75" PointY="44.75" />
+        <EntityTypeShape EntityType="IBAModel.OnlinePaymentType" Width="1.5" PointX="44.75" PointY="37.75" />
+        <EntityTypeShape EntityType="IBAModel.PasswordResetInvalidRequest" Width="1.5" PointX="44.75" PointY="41.75" />
+        <EntityTypeShape EntityType="IBAModel.PasswordResetRequest" Width="1.5" PointX="44.75" PointY="44.75" />
+        <EntityTypeShape EntityType="IBAModel.PasswordResetRequestArchive" Width="1.5" PointX="45.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_abbreviation" Width="1.5" PointX="0.75" PointY="45.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_category" Width="1.5" PointX="45.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_committees" Width="1.5" PointX="45.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_contributor" Width="1.5" PointX="45.75" PointY="18.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_contributor_type" Width="1.5" PointX="18.75" PointY="45.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_fee_structure" Width="1.5" PointX="45.75" PointY="23.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_format_types" Width="1.5" PointX="27.75" PointY="45.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_language" Width="1.5" PointX="45.75" PointY="29.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_merchandise" Width="1.5" PointX="38.75" PointY="45.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_order" Width="1.5" PointX="40.75" PointY="45.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_order_items" Width="1.5" PointX="46.75" PointY="32.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_order_status" Width="1.5" PointX="46.75" PointY="12.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_order_wddx_data" Width="1.5" PointX="46.75" PointY="39.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_postage" Width="1.5" PointX="46.75" PointY="43.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_promotion" Width="1.5" PointX="47.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication" Width="1.5" PointX="5.75" PointY="8.25" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_conference" Width="1.5" PointX="14.75" PointY="1.125" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_conference_language" Width="1.5" PointX="2.75" PointY="47.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_format" Width="1.5" PointX="4.75" PointY="47.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_size" Width="1.5" PointX="47.75" PointY="5.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publications" Width="1.5" PointX="47.75" PointY="16.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_sections" Width="1.5" PointX="47.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_status" Width="1.5" PointX="47.75" PointY="24.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_stock" Width="1.5" PointX="34.75" PointY="47.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_subscription" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="IBAModel.pub_subscription_format" Width="1.5" PointX="6.75" PointY="48.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_subscription_purchased" Width="1.5" PointX="25.75" PointY="48.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_subscription_size" Width="1.5" PointX="48.75" PointY="12.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_types" Width="1.5" PointX="47.75" PointY="29.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_website_content" Width="1.5" PointX="27.75" PointY="48.75" />
+        <EntityTypeShape EntityType="IBAModel.record_sessions" Width="1.5" PointX="14.25" PointY="20.375" />
+        <EntityTypeShape EntityType="IBAModel.sysdiagram" Width="1.5" PointX="15.75" PointY="48.75" />
+        <EntityTypeShape EntityType="IBAModel.TimeZoneInfo" Width="1.5" PointX="48.75" PointY="32.75" />
+        <EntityTypeShape EntityType="IBAModel.accounts_delivery_types" Width="1.5" PointX="48.75" PointY="37.75" />
+        <EntityTypeShape EntityType="IBAModel.audit_myiba_login" Width="1.5" PointX="48.75" PointY="40.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_administrator" Width="1.5" PointX="5.25" PointY="83.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_conference_hotel" Width="1.5" PointX="5.25" PointY="34.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_fee_structure_country_group_gen_countries" Width="1.5" PointX="14.25" PointY="63.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_fee_structure_lawyer_type_group_gen_lawyer_types" Width="1.5" PointX="14.25" PointY="52.125" />
+        <EntityTypeShape EntityType="IBAModel.conf_function_unit" Width="1.5" PointX="10.5" PointY="46.125" />
+        <EntityTypeShape EntityType="IBAModel.conf_paper_function" Width="1.5" PointX="42.75" PointY="48.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_paper_unit" Width="1.5" PointX="48.75" PointY="43.75" />
+        <EntityTypeShape EntityType="IBAModel.conf_speaker_function" Width="1.5" PointX="16.5" PointY="34" />
+        <EntityTypeShape EntityType="IBAModel.conf_speaker_unit" Width="1.5" PointX="13.5" PointY="42" />
+        <EntityTypeShape EntityType="IBAModel.conf_unit" Width="1.5" PointX="5.25" PointY="81" />
+        <EntityTypeShape EntityType="IBAModel.fees_conferences" Width="1.5" PointX="44.75" PointY="48.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_barassociations" Width="1.5" PointX="48.75" PointY="46.75" />
+        <EntityTypeShape EntityType="IBAModel.mem_members_barassociations" Width="1.5" PointX="49.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_conference_permission" Width="1.5" PointX="49.75" PointY="3.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_conference_unit" Width="1.5" PointX="17" PointY="3.875" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_permission" Width="1.5" PointX="49.75" PointY="6.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_publication_unit" Width="1.5" PointX="8" PointY="12.125" />
+        <EntityTypeShape EntityType="IBAModel.pub_subscription_permission" Width="1.5" PointX="8.75" PointY="49.75" />
+        <EntityTypeShape EntityType="IBAModel.pub_subscription_unit" Width="1.5" PointX="3" PointY="11.25" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegate_guest__records" />
+        <AssociationConnector Association="IBAModel.FK_record_sessions__records" />
+        <AssociationConnector Association="IBAModel.FK_conf_function_av_requirement_conf_av_requirement" />
+        <AssociationConnector Association="IBAModel.FK_conf_administrator_conf_conference" />
+        <AssociationConnector Association="IBAModel.FK_conf_attachments_conf_conferences" />
+        <AssociationConnector Association="IBAModel.FK_conf_conference_conf_status" />
+        <AssociationConnector Association="IBAModel.FK_conf_conferences_conf_types" />
+        <AssociationConnector Association="IBAModel.FK_conf_conferences_hotels_conf_conferences" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegates_conf_conferences" />
+        <AssociationConnector Association="IBAModel.FK_conf_fees_structure_conf_conferences" />
+        <AssociationConnector Association="IBAModel.FK_conf_functions_conf_conferences" />
+        <AssociationConnector Association="IBAModel.FK_conf_units_conf_conferences" />
+        <AssociationConnector Association="IBAModel.FK_conf_website_config_conf_conference" />
+        <AssociationConnector Association="IBAModel.FK_conf_website_content_conf_conference" />
+        <AssociationConnector Association="IBAModel.FK_conf_website_menu_conf_conference" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegate_guest_conf_delegate" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegate_output_conf_delegate" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegates_conf_delegates_types" />
+        <AssociationConnector Association="IBAModel.FK_conf_speaker_function_conf_delegate" />
+        <AssociationConnector Association="IBAModel.FK_conf_speaker_unit_conf_delegate" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegates_functions_conf_functions" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegate_guest_conf_guest" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegate_meeting_conf_function" />
+        <AssociationConnector Association="IBAModel.FK_conf_delegate_output_conf_output" />
+        <AssociationConnector Association="IBAModel.FK_conf_fees_structure_conf_fees_structure_country_groups" />
+        <AssociationConnector Association="IBAModel.FK_conf_fees_structure_conf_fees_structure_lawyer_type_group" />
+        <AssociationConnector Association="IBAModel.FK_conf_fees_structure_mem_class" />
+        <AssociationConnector Association="IBAModel.FK_conf_fees_structure_country_groups_gen_countries_conf_fees_structure_country_groups" />
+        <AssociationConnector Association="IBAModel.FK_conf_fee_structure_lawyer_type_group_gen_lawyer_types_conf_fee_structure_lawyer_type_group" />
+        <AssociationConnector Association="IBAModel.FK_conf_function_av_requirement_conf_function" />
+        <AssociationConnector Association="IBAModel.FK_conf_functions_conf_functions_rooms" />
+        <AssociationConnector Association="IBAModel.FK_conf_functions_conf_functions_status" />
+        <AssociationConnector Association="IBAModel.FK_conf_functions_conf_functions_types" />
+        <AssociationConnector Association="IBAModel.FK_conf_functions_units_conf_functions" />
+        <AssociationConnector Association="IBAModel.FK_conf_speaker_function_conf_function" />
+        <AssociationConnector Association="IBAModel.FK_conf_conferences_hotels_conf_hotels" />
+        <AssociationConnector Association="IBAModel.FK_conf_speaker_function_conf_speaker_function_role" />
+        <AssociationConnector Association="IBAModel.FK_gen_committees_gen_sections" />
+        <AssociationConnector Association="IBAModel.FK_gen_sections_gen_divisions" />
+        <AssociationConnector Association="IBAModel.FK_HRIActiveContactForm_HRIContact" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactCategory_HRICategory" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactCategoryIncoming_HRICategory" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactCategory_HRIContact" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactIncoming_HRIContact" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactLanguage_HRIContact" />
+        <AssociationConnector Association="IBAModel.FK_HRIProject_HRIContact" />
+        <AssociationConnector Association="IBAModel.FK_HRITravelInsuranceDetails_HRIContact" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactCategoryIncoming_HRIContactIncoming" />
+        <AssociationConnector Association="IBAModel.FK_HRIContactLanguageIncoming_HRIContactIncoming" />
+        <AssociationConnector Association="IBAModel.FK_HRIProjectIncoming_HRIContactIncoming" />
+        <AssociationConnector Association="IBAModel.FK_HRITravelInsuranceDetailsIncoming_HRIContactIncoming" />
+        <AssociationConnector Association="IBAModel.FK_pub_publication_unit_pub_publication" />
+        <AssociationConnector Association="IBAModel.FK_pub_publication_conference_unit_pub_publication_conference" />
+        <AssociationConnector Association="IBAModel.FK_pub_subscription_unit_pub_subscription" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,19 @@
+﻿@model string
+@{
+    const string act = "class=active";
+}
+
+@{
+    var cls = Model == "content" ? act : "";
+}
+<li @cls>@Html.ActionLink("Library", "Index", "ContentLibrary")</li>
+@{
+    cls = Model == "messages" ? act : "";
+}
+<li @cls>@Html.ActionLink("Messages", "Index", "Messages")</li>
+@{
+    cls = Model == "conference" ? act : "";
+}
+<li @cls>@Html.ActionLink("Conference", "Index", "Schedule")</li>
+
+
